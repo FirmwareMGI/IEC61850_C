@@ -1,5 +1,5 @@
-LIBIEC_HOME= /home/ubuntu/2025proj/GIPAT_SCADA/IEC61850/lib/libiec61850
-MAKE_MK_PATH = /home/ubuntu/2025proj/GIPAT_SCADA/IEC61850/control/c
+LIBIEC_HOME= /home/pi/c_dms/lib/libiec61850/
+MAKE_MK_PATH = /home/pi/IEC61850_C-main
 PROJECT_BINARY_NAME = client_example_control
 PROJECT_SOURCES = client_example_control.c
 CJSON = cJSON.c
