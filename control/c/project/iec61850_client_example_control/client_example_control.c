@@ -7,7 +7,6 @@
 #include "iec61850_client.h"
 #include "hal_thread.h"
 
-#include <signal.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdint.h>
@@ -18,10 +17,6 @@
 #include "cJSON.h"
 
 #include "log.h"
-
-// SIGKILL
-volatile sig_atomic_t shouldExit = 0;
-// SIGKILL
 
 // MQTT
 #define ADDRESS "tcp://172.28.80.1:1883"
@@ -109,22 +104,6 @@ const char *IEC61850_GetcommandLastApplError_AddCause(ControlObjectClient ctlCom
 const char *IEC61850_GetcommandLastErrorString(ControlObjectClient ctlCommand);
 // FUNCTION
 
-void handleSignal(int sig)
-{
-    if (sig == SIGINT || sig == SIGTERM || sig == SIGHUP)
-    {
-        printf("Signal %d received. Preparing to exit...\n", sig);
-        shouldExit = 1;
-    }
-}
-
-void setupSignalHandlers()
-{
-    signal(SIGINT, handleSignal);  // Ctrl+C
-    signal(SIGTERM, handleSignal); // kill <pid>, systemctl stop
-    signal(SIGHUP, handleSignal);  // terminal closed or systemctl restart
-}
-
 const char *current_time_str()
 {
     static char buffer[32]; // Static so it's valid after return
@@ -196,42 +175,6 @@ typedef struct
 
 Message mqttSubData;
 
-Message messageQueue[MAX_QUEUE];
-int queueHead = 0;
-int queueTail = 0;
-
-int isQueueFull()
-{
-    return ((queueTail + 1) % MAX_QUEUE) == queueHead;
-}
-
-int isQueueEmpty()
-{
-    return queueHead == queueTail;
-}
-
-void enqueueMessage(const char *topic, const char *payload)
-{
-    if (isQueueFull())
-    {
-        printf("Queue is full. Dropping message.\n");
-        return;
-    }
-    strncpy(messageQueue[queueTail].topic, topic, sizeof(messageQueue[queueTail].topic) - 1);
-    strncpy(messageQueue[queueTail].payload, payload, sizeof(messageQueue[queueTail].payload) - 1);
-    messageQueue[queueTail].payload[MAX_PAYLOAD - 1] = '\0';
-    queueTail = (queueTail + 1) % MAX_QUEUE;
-}
-
-int dequeueMessage(Message *msg)
-{
-    if (isQueueEmpty())
-        return 0;
-    *msg = messageQueue[queueHead];
-    queueHead = (queueHead + 1) % MAX_QUEUE;
-    return 1;
-}
-
 // Check if a string ends with another string
 bool str_ends_with(const char *str, const char *suffix)
 {
@@ -288,25 +231,6 @@ void message_arrived_callback(void *context, char *topicName, int topicLen, MQTT
 
     MQTTClient_freeMessage(&message);
     MQTTClient_free(topicName);
-}
-
-// Minimal work inside callback
-int messageArrivedCallback(void *context, char *topicName, int topicLen, MQTTClient_message *message)
-{
-    printf("TOPIC: %s", topicName);
-    // if (strstr(topicName, "control") == NULL && strstr(topicName, "request") != NULL)
-    // {
-    //     MQTTClient_freeMessage(&message);
-    //     MQTTClient_free(topicName);
-    //     return 1;
-    // }
-
-    // char *payload = (char *)message->payload;
-    // enqueueMessage(topicName, payload);
-
-    MQTTClient_freeMessage(&message);
-    MQTTClient_free(topicName);
-    return 1;
 }
 
 int processParseJsonReceive(char *payload, ReceiveControl *out)
@@ -558,28 +482,9 @@ int parseJsonToReceiveControl(const char *jsonStr, ReceiveControl *rc)
     return 0; // success
 }
 
-void update_control(IecResponseControl *ctrl)
-{
-    strcpy(ctrl->status, "ok");
-    strcpy(ctrl->iecErrorString, "ok");
-    ctrl->timestamp = 1716800000123;
-}
-
 void processIEC61850Control(IedConnection iecConn, const char *ctlModel, ReceiveControl rc, ResponseControl *iecRc)
 {
-    // strcpy(iecRc->status, "ok");
-    // int returns = 0;
-    // for (int i = 0; i < enabledCount; i++)
-    // {
-    // printf("ReceiveControl: %s model: %s\n", rc.object, enabledControls[i].object);
-    // printf(" - Object: %s | ctlModel: %s\n", enabledControls[i].object, enabledControls[i].ctlModel);
-    // <EnumVal ord="1">direct-with-normal-security</EnumVal>
-    // <EnumVal ord="2">sbo-with-normal-security</EnumVal>
-    // <EnumVal ord="3">direct-with-enhanced-security</EnumVal>
-    // <EnumVal ord="4">sbo-with-enhanced-security</EnumVal>
 
-    // if (strcmp(rc.object, objectControl) == 0)
-    // {
     if (strcmp(rc.ctlCommand, "cancel") == 0)
     {
         log_info("IEC61850: Control :%s", "cancel command");
@@ -587,59 +492,39 @@ void processIEC61850Control(IedConnection iecConn, const char *ctlModel, Receive
         ResponseControl RespCancel;
         IEC61850_control_cancel_ex(iecConn, rc.object, &RespCancel);
         memcpy(iecRc, &RespCancel, sizeof(ResponseControl));
-        // printf("RespCancel: %s\n", RespCancel.ctlCommand);
     }
     else
     {
-        // printf("ctlModel[%d] obj:%s model:%s\n", i, enabledControls[i].object, enabledControls[i].ctlModel);
         printf("ReceiveControl: %s\n", rc.object);
         if (strcmp(ctlModel, "direct-with-normal-security") == 0)
         {
-            // IecResponseControl iecRespDirectNormal;
             ResponseControl RespDirectNormal;
             log_info("IEC61850: Control :%s", "direct normal command");
             IEC61850_control_direct_normal_ex(iecConn, rc.object, rc, &RespDirectNormal);
             memcpy(iecRc, &RespDirectNormal, sizeof(ResponseControl));
-            // strcpy(iecRc->status, iecRespDirectNormal.status);
         }
         if (strcmp(ctlModel, "sbo-with-normal-security") == 0)
         {
-            // IecResponseControl iecRespSboNormal;
             ResponseControl RespSboNormal;
             log_info("IEC61850: Control :%s", "sbo normal command");
             IEC61850_control_sbo_normal_ex(iecConn, rc.object, rc, &RespSboNormal);
             memcpy(iecRc, &RespSboNormal, sizeof(ResponseControl));
-            // strcpy(iecRc->status, iecRespSboNormal.status);
         }
         if (strcmp(ctlModel, "direct-with-enhanced-security") == 0)
         {
-            // IecResponseControl iecRespDirectSecurity;
             ResponseControl RespDirectSecurity;
             log_info("IEC61850: Control :%s", "direct security command");
             IEC61850_control_direct_security_ex(iecConn, rc.object, rc, &RespDirectSecurity);
             memcpy(iecRc, &RespDirectSecurity, sizeof(ResponseControl));
-            // strcpy(iecRc->status, iecRespDirectSecurity.status);
         }
         if (strcmp(ctlModel, "sbo-with-enhanced-security") == 0)
         {
-            // IecResponseControl iecRespSboSecurity;
             ResponseControl RespSboSecurity;
             log_info("IEC61850: Control :%s", "sbo security command");
             IEC61850_control_sbo_security_ex(iecConn, rc.object, rc, &RespSboSecurity);
             memcpy(iecRc, &RespSboSecurity, sizeof(ResponseControl));
-            // strcpy(iecRc->status, iecRespSboSecurity.status);
         }
     }
-    // returns = 0;
-    // }
-    // else
-    // {
-    // returns = 1;
-    // log_info("IEC61850: Item control not same");
-    // printf("    %s || %s\n", rc.object, enabledControls[i].object);
-    // }
-    // IEC61850_control_direct_security(iecConn, msg.topic, false);
-    // }
 }
 
 int MQTT_publish(MQTTClient mqttClient, const char *topic, const char *msg)
@@ -659,7 +544,6 @@ int MQTT_publish(MQTTClient mqttClient, const char *topic, const char *msg)
     }
 
     MQTTClient_waitForCompletion(mqttClient, token, TIMEOUT);
-    // printf("Published: %s\n", msg);
     return 0;
 }
 
@@ -919,45 +803,6 @@ MmsValue *createDynamicMMS(char *_type, char *value)
         return MmsValue_newInteger(atoi(value));
 }
 
-int IEC61850_control_direct_normal(IedConnection con, char *control_obj, bool value)
-{
-    MmsValue *ctlVal = NULL;
-    MmsValue *stVal = NULL;
-    IedClientError error;
-
-    /************************
-     * Direct control
-     ***********************/
-    // printf("******* Direct control *******\n");
-    // const char *control_obj_val = "BCUCPLCONTROL1/GBAY1.Loc.stVal";
-    ControlObjectClient control = ControlObjectClient_create(control_obj, con);
-
-    if (control)
-    {
-        ctlVal = MmsValue_newBoolean(true);
-
-        ControlObjectClient_setOrigin(control, NULL, 3);
-
-        if (ControlObjectClient_operate(control, ctlVal, 0 /* operate now */))
-        {
-            printf("%s operated successfully\n", control_obj);
-
-            return IED_ERROR_OK;
-        }
-        else
-        {
-            printf("failed to operate %s\n", control_obj);
-        }
-        MmsValue_delete(ctlVal);
-        ControlObjectClient_destroy(control);
-    }
-    else
-    {
-        printf("Control object %s not found in server\n", control_obj);
-        return IED_ERROR_OK;
-    }
-}
-
 int IEC61850_control_direct_normal_ex(IedConnection con, char *control_obj, ReceiveControl rc, ResponseControl *resp)
 {
     MmsValue *ctlVal = NULL;
@@ -966,8 +811,6 @@ int IEC61850_control_direct_normal_ex(IedConnection con, char *control_obj, Rece
     /************************
      * Direct control
      ***********************/
-    // printf("******* Direct control *******\n");
-    // const char *control_obj_val = "BCUCPLCONTROL1/GBAY1.Loc.stVal";
     ControlObjectClient control = ControlObjectClient_create(control_obj, con);
     strcpy(resp->ctlCommand, "direct");
     strcpy(resp->object, control_obj);
@@ -1006,49 +849,6 @@ int IEC61850_control_direct_normal_ex(IedConnection con, char *control_obj, Rece
     strcpy(resp->timestamp, current_time_str());
 }
 
-int IEC61850_control_sbo_normal(IedConnection con, char *control_obj, bool value)
-{
-    MmsValue *ctlVal = NULL;
-    MmsValue *stVal = NULL;
-    /************************
-     * Select before operate
-     ***********************/
-    // printf("******* Select before operate *******\n");
-    const char *select_normal_ctl_obj = control_obj;
-    // const char *select_normal_ctl_obj_val = "BCUCPLCONTROL1/CSWI1.Pos.stVal";
-    ControlObjectClient control = ControlObjectClient_create(select_normal_ctl_obj, con);
-
-    if (control)
-    {
-        if (ControlObjectClient_select(control))
-        {
-
-            ctlVal = MmsValue_newBoolean(false);
-
-            if (ControlObjectClient_operate(control, ctlVal, 0 /* operate now */))
-            {
-                printf("%s operated successfully\n", select_normal_ctl_obj);
-            }
-            else
-            {
-                printf("failed to operate %s!\n", select_normal_ctl_obj);
-            }
-
-            MmsValue_delete(ctlVal);
-        }
-        else
-        {
-            printf("failed to select %s!\n", select_normal_ctl_obj);
-        }
-
-        ControlObjectClient_destroy(control);
-    }
-    else
-    {
-        printf("Control object %s not found in server\n", select_normal_ctl_obj);
-    }
-}
-
 int IEC61850_control_sbo_normal_ex(IedConnection con, char *control_obj, ReceiveControl rc, ResponseControl *resp)
 {
     MmsValue *ctlVal = NULL;
@@ -1056,9 +856,7 @@ int IEC61850_control_sbo_normal_ex(IedConnection con, char *control_obj, Receive
     /************************
      * Select before operate
      ***********************/
-    // printf("******* Select before operate *******\n");
     const char *select_normal_ctl_obj = control_obj;
-    // const char *select_normal_ctl_obj_val = "BCUCPLCONTROL1/CSWI1.Pos.stVal";
     ControlObjectClient control = ControlObjectClient_create(select_normal_ctl_obj, con);
     strcpy(resp->ctlCommand, "sbo");
     strcpy(resp->object, control_obj);
@@ -1070,8 +868,6 @@ int IEC61850_control_sbo_normal_ex(IedConnection con, char *control_obj, Receive
     {
         if (ControlObjectClient_select(control))
         {
-
-            // ctlVal = MmsValue_newBoolean(false);
             ctlVal = createDynamicMMS(rc.typeData, rc.valueNow);
             strcpy(resp->valueNow, rc.valueNow);
             if (ControlObjectClient_operate(control, ctlVal, 0 /* operate now */))
@@ -1102,64 +898,6 @@ int IEC61850_control_sbo_normal_ex(IedConnection con, char *control_obj, Receive
         strcpy(resp->errorString, "item not found");
     }
     strcpy(resp->errorString, "value not changed");
-}
-
-int IEC61850_control_direct_security(IedConnection con, char *control_obj, bool value)
-{
-    MmsValue *ctlVal = NULL;
-    MmsValue *stVal = NULL;
-    // /****************************************
-    //  * Direct control with enhanced security
-    //  ****************************************/
-    // printf("******* Direct control with enhanced security *******\n");
-
-    const char *direct_security_ctl_obj = "BCUCPLCONTROL1/GBAY1.Loc";
-    const char *direct_security_ctl_obj_val = "BCUCPLCONTROL1/GBAY1.Loc.stVal";
-    ControlObjectClient control = ControlObjectClient_create(direct_security_ctl_obj, con);
-
-    if (control)
-    {
-        ControlObjectClient_setCommandTerminationHandler(control, commandTerminationHandler, NULL);
-
-        ctlVal = MmsValue_newBoolean(value);
-
-        if (ControlObjectClient_operate(control, ctlVal, 0 /* operate now */))
-        {
-            printf("%s operated successfully\n", direct_security_ctl_obj);
-        }
-        else
-        {
-            printf("failed to operate %s\n", direct_security_ctl_obj);
-        }
-
-        MmsValue_delete(ctlVal);
-
-        /* Wait for command termination message */
-        Thread_sleep(1000);
-
-        ControlObjectClient_destroy(control);
-
-        // /* Check if status value has changed */
-
-        // stVal = IedConnection_readObject(con, &error, direct_security_ctl_obj_val, IEC61850_FC_ST);
-
-        // if (error == IED_ERROR_OK)
-        // {
-        //     bool state = MmsValue_getBoolean(stVal);
-
-        //     printf("New status of %s: %i\n", direct_security_ctl_obj_val, state);
-
-        //     MmsValue_delete(stVal);
-        // }
-        // else
-        // {
-        //     printf("Reading status for %s failed!\n", direct_security_ctl_obj);
-        // }
-    }
-    else
-    {
-        printf("Control object %s not found in server\n", direct_security_ctl_obj);
-    }
 }
 
 int IEC61850_control_direct_security_ex(IedConnection con, char *control_obj, ReceiveControl rc, ResponseControl *resp)
@@ -1213,63 +951,13 @@ int IEC61850_control_direct_security_ex(IedConnection con, char *control_obj, Re
     strcpy(resp->timestamp, current_time_str());
 }
 
-int IEC61850_control_sbo_security(IedConnection con, char *control_obj, bool value)
-{
-    MmsValue *ctlVal = NULL;
-    MmsValue *stVal = NULL;
-    // /***********************************************
-    //  * Select before operate with enhanced security
-    //  ***********************************************/
-    // printf("******* Select before operate with enhanced security *******\n");
-    const char *select_security_ctl_obj = "BCUCPLCONTROL1/CSWI1.Pos";
-    const char *select_security_ctl_obj_val = "BCUCPLCONTROL1/CSWI1.Pos.stVal";
-    ControlObjectClient control = ControlObjectClient_create(select_security_ctl_obj, con);
-
-    if (control)
-    {
-        ControlObjectClient_setCommandTerminationHandler(control, commandTerminationHandler, NULL);
-
-        ctlVal = MmsValue_newBoolean(true);
-
-        if (ControlObjectClient_selectWithValue(control, ctlVal))
-        {
-
-            if (ControlObjectClient_operate(control, ctlVal, 0 /* operate now */))
-            {
-                printf("%s operated successfully\n", select_security_ctl_obj);
-            }
-            else
-            {
-                printf("failed to operate %s!\n", select_security_ctl_obj);
-            }
-        }
-        else
-        {
-            printf("failed to select %s!\n", select_security_ctl_obj);
-        }
-
-        MmsValue_delete(ctlVal);
-
-        /* Wait for command termination message */
-        Thread_sleep(1000);
-
-        ControlObjectClient_destroy(control);
-    }
-    else
-    {
-        printf("Control object %s not found in server\n", select_security_ctl_obj);
-    }
-}
-
 int IEC61850_control_sbo_security_ex(IedConnection con, char *control_obj, ReceiveControl rc, ResponseControl *resp)
 {
     MmsValue *ctlVal = NULL;
     // /***********************************************
     //  * Select before operate with enhanced security
     //  ***********************************************/
-    // printf("******* Select before operate with enhanced security *******\n");
     const char *select_security_ctl_obj = control_obj;
-    // const char *select_security_ctl_obj_val = "BCUCPLCONTROL1/CSWI1.Pos.stVal";
     ControlObjectClient control = ControlObjectClient_create(select_security_ctl_obj, con);
 
     strcpy(resp->ctlCommand, "sbo");
@@ -1282,10 +970,8 @@ int IEC61850_control_sbo_security_ex(IedConnection con, char *control_obj, Recei
     {
         ControlObjectClient_setCommandTerminationHandler(control, commandTerminationHandler, NULL);
 
-        // ctlVal = MmsValue_newBoolean(true);
         ctlVal = createDynamicMMS(rc.typeData, rc.valueNow);
         strcpy(resp->valueNow, rc.valueNow);
-        // log_info("IEC61850: TYPE: %s VAL: %s", MmsValue_getTypeString(ctlVal), rc.valueNow);
 
         if (ControlObjectClient_selectWithValue(control, ctlVal))
         {
@@ -1309,7 +995,6 @@ int IEC61850_control_sbo_security_ex(IedConnection con, char *control_obj, Recei
 
         MmsValue_delete(ctlVal);
 
-        /* Wait for command termination message */
         Thread_sleep(1000);
 
         ControlObjectClient_destroy(control);
@@ -1322,46 +1007,6 @@ int IEC61850_control_sbo_security_ex(IedConnection con, char *control_obj, Recei
     }
 }
 
-int IEC61850_control_direct_security_exp(IedConnection con, char *control_obj, bool value)
-{
-    MmsValue *ctlVal = NULL;
-    MmsValue *stVal = NULL;
-    // /*********************************************************************
-    //  * Direct control with enhanced security (expect CommandTermination-)
-    //  *********************************************************************/
-    // printf("******* Direct control with enhanced security (expect CommandTermination-) *******\n");
-    const char *direct_sec_ct_ctl_obj = control_obj;
-    // const char *direct_sec_ct_ctl_obj_val = "BCUCPLCONTROL1/GBAY1.Loc.stVal";
-    ControlObjectClient control = ControlObjectClient_create(direct_sec_ct_ctl_obj, con);
-
-    if (control)
-    {
-        ControlObjectClient_setCommandTerminationHandler(control, commandTerminationHandler, NULL);
-
-        ctlVal = MmsValue_newBoolean(true);
-
-        if (ControlObjectClient_operate(control, ctlVal, 0 /* operate now */))
-        {
-            printf("%s operated successfully\n", direct_sec_ct_ctl_obj);
-        }
-        else
-        {
-            printf("failed to operate %s\n", direct_sec_ct_ctl_obj);
-        }
-
-        MmsValue_delete(ctlVal);
-
-        /* Wait for command termination message */
-        Thread_sleep(1000);
-
-        ControlObjectClient_destroy(control);
-    }
-    else
-    {
-        printf("Control object %s not found in server\n", direct_sec_ct_ctl_obj);
-    }
-}
-
 int IEC61850_control_direct_security_exp_ex(IedConnection con, char *control_obj, ReceiveControl rc, ResponseControl *resp)
 {
     MmsValue *ctlVal = NULL;
@@ -1369,9 +1014,7 @@ int IEC61850_control_direct_security_exp_ex(IedConnection con, char *control_obj
     // /*********************************************************************
     //  * Direct control with enhanced security (expect CommandTermination-)
     //  *********************************************************************/
-    // printf("******* Direct control with enhanced security (expect CommandTermination-) *******\n");
     const char *direct_sec_ct_ctl_obj = control_obj;
-    // const char *direct_sec_ct_ctl_obj_val = "BCUCPLCONTROL1/GBAY1.Loc.stVal";
     strcpy(resp->ctlCommand, "direct");
     strcpy(resp->object, control_obj);
     strcpy(resp->lastValue, "none");
@@ -1382,8 +1025,6 @@ int IEC61850_control_direct_security_exp_ex(IedConnection con, char *control_obj
     if (control)
     {
         ControlObjectClient_setCommandTerminationHandler(control, commandTerminationHandler, NULL);
-
-        // ctlVal = MmsValue_newBoolean(true);
         ctlVal = createDynamicMMS(rc.typeData, rc.valueNow);
         strcpy(resp->valueNow, rc.valueNow);
         if (ControlObjectClient_operate(control, ctlVal, 0 /* operate now */))
@@ -1399,8 +1040,6 @@ int IEC61850_control_direct_security_exp_ex(IedConnection con, char *control_obj
         }
 
         MmsValue_delete(ctlVal);
-
-        /* Wait for command termination message */
         Thread_sleep(1000);
 
         ControlObjectClient_destroy(control);
@@ -1414,46 +1053,11 @@ int IEC61850_control_direct_security_exp_ex(IedConnection con, char *control_obj
     strcpy(resp->timestamp, current_time_str());
 }
 
-int IEC61850_control_cancel(IedConnection con, char *control_obj)
-{
-    // /*********************************************************************
-    //  * Cancel
-    //  *********************************************************************/
-    // printf("******* Cancel *******\n");
-    const char *cancel_obj = control_obj;
-    ControlObjectClient control = ControlObjectClient_create(cancel_obj, con);
-
-    if (control)
-    {
-        ControlObjectClient_setCommandTerminationHandler(control, commandTerminationHandler, NULL);
-
-        // ctlVal = MmsValue_newBoolean(true);
-        if (ControlObjectClient_cancel(control /* operate now */))
-        {
-            printf("%s cancel successfully\n", cancel_obj);
-        }
-        else
-        {
-            printf("failed to cancel %s\n", cancel_obj);
-        }
-
-        /* Wait for command termination message */
-        Thread_sleep(1000);
-
-        ControlObjectClient_destroy(control);
-    }
-    else
-    {
-        printf("Control object %s not found in server\n", cancel_obj);
-    }
-}
-
 int IEC61850_control_cancel_ex(IedConnection con, char *control_obj, ResponseControl *resp)
 {
     // /*********************************************************************
     //  * Cancel
     //  *********************************************************************/
-    // printf("******* Cancel *******\n");
     const char *cancel_obj = control_obj;
     ControlObjectClient control = ControlObjectClient_create(cancel_obj, con);
     strcpy(resp->ctlCommand, "cancel");
@@ -1466,13 +1070,10 @@ int IEC61850_control_cancel_ex(IedConnection con, char *control_obj, ResponseCon
     {
         ControlObjectClient_setCommandTerminationHandler(control, commandTerminationHandler, NULL);
 
-        // ctlVal = MmsValue_newBoolean(true);
         if (ControlObjectClient_cancel(control /* operate now */))
         {
             printf("%s cancel successfully\n", cancel_obj);
             strcpy(resp->status, "success");
-            // resp->status = "success";
-            // sprintf(&resp->status, "%s", "success");
         }
         else
         {
@@ -1481,7 +1082,6 @@ int IEC61850_control_cancel_ex(IedConnection con, char *control_obj, ResponseCon
             strcpy(resp->errorString, "object not found");
         }
 
-        /* Wait for command termination message */
         Thread_sleep(1000);
 
         ControlObjectClient_destroy(control);
@@ -1497,10 +1097,6 @@ int IEC61850_control_cancel_ex(IedConnection con, char *control_obj, ResponseCon
 
 int main(int argc, char **argv)
 {
-    // init signit
-    // setupSignalHandlers();
-    // init signit
-
     //// PARSING JSON FILE ////
     if (argc != 2)
     {
@@ -1640,28 +1236,23 @@ int main(int argc, char **argv)
     if (error == IED_ERROR_OK)
     {
         log_info("IEC61850 %s", "Connection Success");
-        // printf("IEC61850: Connection Success\n");
     }
     else
     {
         log_info("IEC61850 %s", "Connection failed | reason:", IedClientError_toString(error));
-        // printf("IEC61850: Connection failed | reason: %s \n", IedClientError_toString(error));
     }
     while (1)
     {
         Thread_sleep(500);
-        // controlHandle();
         processMessages(con, client);
     }
 
     cJSON_Delete(json);
     free(json_data);
-    // IedConnection_close(con);
-    // IedConnection_destroy(con);
+    IedConnection_close(con);
+    IedConnection_destroy(con);
     MQTTClient_disconnect(client, 10000);
     MQTTClient_destroy(&client);
-
-    // free(enabledControls);
 
     return 0;
 }
