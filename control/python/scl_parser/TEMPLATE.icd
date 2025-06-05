@@ -1,0 +1,5261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Created by ThinkPad with OMICRON IEDScout 4.20 licensed to -->
+<!--SCL Schema Version 1.6 (2013/08/14)-->
+<SCL xmlns="http://www.iec.ch/61850/2003/SCL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.iec.ch/61850/2003/SCL SCL.xsd">
+	<Header id="" version="" revision="" toolID="OMICRON IEDScout" nameStructure="IEDName" />
+	<Communication>
+		<SubNetwork name="NONE" type="8-MMS">
+			<ConnectedAP iedName="TEMPLATE" apName="P1">
+				<Address>
+					<P type="IP" xsi:type="tP_IP">192.168.2.201</P>
+					<P type="OSI-TSEL" xsi:type="tP_OSI-TSEL">0001</P>
+					<P type="OSI-SSEL" xsi:type="tP_OSI-SSEL">0001</P>
+					<P type="OSI-PSEL" xsi:type="tP_OSI-PSEL">00000001</P>
+					<P type="OSI-AP-Title">1,1,1,999,1</P>
+					<P type="OSI-AP-Invoke" xsi:type="tP_OSI-AP-Invoke">0</P>
+					<P type="OSI-AE-Qualifier" xsi:type="tP_OSI-AE-Qualifier">12</P>
+					<P type="OSI-AE-Invoke" xsi:type="tP_OSI-AE-Invoke">0</P>
+				</Address>
+				<GSE ldInst="CFG" cbName="GPub01">
+					<Address>
+						<P type="MAC-Address" xsi:type="tP_MAC-Address">01-0C-CD-01-00-04</P>
+						<P type="APPID" xsi:type="tP_APPID">0004</P>
+						<P type="VLAN-ID" xsi:type="tP_VLAN-ID">001</P>
+						<P type="VLAN-PRIORITY" xsi:type="tP_VLAN-PRIORITY">4</P>
+					</Address>
+				</GSE>
+				<GSE ldInst="CFG" cbName="NewGOOSEMessage">
+					<Address>
+						<P type="MAC-Address" xsi:type="tP_MAC-Address">01-0C-CD-01-00-03</P>
+						<P type="APPID" xsi:type="tP_APPID">0003</P>
+						<P type="VLAN-ID" xsi:type="tP_VLAN-ID">003</P>
+						<P type="VLAN-PRIORITY" xsi:type="tP_VLAN-PRIORITY">4</P>
+					</Address>
+				</GSE>
+			</ConnectedAP>
+		</SubNetwork>
+	</Communication>
+	<IED name="TEMPLATE">
+		<Services>
+			<DynAssociation />
+			<GetDirectory />
+			<GetDataObjectDefinition />
+			<DataObjectDirectory />
+			<GetDataSetValue />
+			<SetDataSetValue />
+			<DataSetDirectory />
+			<ConfDataSet max="15" modify="false" />
+			<DynDataSet max="42" />
+			<ReadWrite />
+			<ConfReportControl max="14" />
+			<GetCBValues />
+			<ReportSettings rptID="Dyn" optFields="Dyn" bufTime="Dyn" trgOps="Dyn" intgPd="Dyn" />
+			<ConfLNs fixPrefix="true" fixLnInst="true" />
+			<GOOSE max="2" />
+			<GSSE max="0" />
+			<FileHandling />
+		</Services>
+		<AccessPoint name="P1">
+			<Server>
+				<Authentication none="true" />
+				<LDevice inst="ANN">
+					<LN0 lnType="TEMPLATEANN.LLN0" lnClass="LLN0" inst="">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Annunciators</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="ldNs">
+								<Val>IEC 61850-7-4:2003</Val>
+							</DAI>
+						</DOI>
+					</LN0>
+					<LN lnType="TEMPLATEANN.ALMGGIO10" prefix="ALM" lnClass="GGIO" inst="10">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Annunciators</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEANN.DevIDLPHD1" prefix="DevID" lnClass="LPHD" inst="1">
+						<DOI name="PhyNam">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="serNum">
+								<Val>1172791119</Val>
+							</DAI>
+							<DAI name="model">
+								<Val>084900100000010</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEANN.ETHGGIO11" prefix="ETH" lnClass="GGIO" inst="11">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Ethernet Health</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEANN.INGGIO1" prefix="IN" lnClass="GGIO" inst="1">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Annunciators</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEANN.INGGIO1" prefix="IN" lnClass="GGIO" inst="12">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Annunciators</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEANN.ETHGGIO11" prefix="LT" lnClass="GGIO" inst="5">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Annunciators</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEANN.MISCGGIO8" prefix="MISC" lnClass="GGIO" inst="8">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Miscellaneous Status</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEANN.MISCGGIO8" prefix="MOT" lnClass="GGIO" inst="7">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Motor Status</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEANN.MVGGIO13" prefix="MV" lnClass="GGIO" inst="13">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Mathvariables</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+						<DOI name="AnIn01">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="d">
+								<Val></Val>
+							</DAI>
+						</DOI>
+						<DOI name="AnIn02">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="d">
+								<Val></Val>
+							</DAI>
+						</DOI>
+						<DOI name="AnIn03">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="d">
+								<Val></Val>
+							</DAI>
+						</DOI>
+						<DOI name="AnIn04">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="d">
+								<Val></Val>
+							</DAI>
+						</DOI>
+						<DOI name="AnIn05">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="d">
+								<Val></Val>
+							</DAI>
+						</DOI>
+						<DOI name="AnIn06">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="d">
+								<Val></Val>
+							</DAI>
+						</DOI>
+						<DOI name="AnIn07">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="d">
+								<Val></Val>
+							</DAI>
+						</DOI>
+						<DOI name="AnIn08">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="d">
+								<Val></Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEANN.OUTGGIO2" prefix="OUT" lnClass="GGIO" inst="2">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Annunciators</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEANN.RAGGIO15" prefix="RA" lnClass="GGIO" inst="15">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Ra001">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Ra002">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Ra003">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Ra004">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Ra005">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Ra006">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Ra007">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Ra008">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Ra009">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Ra010">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Ra011">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Ra012">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Ra013">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Ra014">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Ra015">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Ra016">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Ra017">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Ra018">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Ra019">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Ra020">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Ra021">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Ra022">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Ra023">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Ra024">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Ra025">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Ra026">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Ra027">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Ra028">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Ra029">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Ra030">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Ra031">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Ra032">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Remote Analogs</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEANN.MVGGIO13" prefix="SC" lnClass="GGIO" inst="14">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Counters</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+						<DOI name="AnIn01">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="d">
+								<Val></Val>
+							</DAI>
+						</DOI>
+						<DOI name="AnIn02">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="d">
+								<Val></Val>
+							</DAI>
+						</DOI>
+						<DOI name="AnIn03">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="d">
+								<Val></Val>
+							</DAI>
+						</DOI>
+						<DOI name="AnIn04">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="d">
+								<Val></Val>
+							</DAI>
+						</DOI>
+						<DOI name="AnIn05">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="d">
+								<Val></Val>
+							</DAI>
+						</DOI>
+						<DOI name="AnIn06">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="d">
+								<Val></Val>
+							</DAI>
+						</DOI>
+						<DOI name="AnIn07">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="d">
+								<Val></Val>
+							</DAI>
+						</DOI>
+						<DOI name="AnIn08">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="d">
+								<Val></Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEANN.ETHGGIO11" prefix="SV" lnClass="GGIO" inst="3">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Annunciators</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEANN.ETHGGIO11" prefix="SVT" lnClass="GGIO" inst="4">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Annunciators</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEANN.TLEDGGIO6" prefix="TLED" lnClass="GGIO" inst="6">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Annunciators</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEANN.VBGGIO9" prefix="VB" lnClass="GGIO" inst="9">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Annunciators</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+				</LDevice>
+				<LDevice inst="CFG">
+					<LN0 lnType="TEMPLATEANN.LLN0" lnClass="LLN0" inst="">
+						<DataSet name="BRDSet01">
+							<FCDA ldInst="MET" prefix="MET" lnClass="MMXU" lnInst="1" doName="A" fc="MX" />
+							<FCDA ldInst="MET" prefix="MET" lnClass="MMXU" lnInst="1" doName="PhV" fc="MX" />
+							<FCDA ldInst="MET" prefix="MET" lnClass="MMXU" lnInst="1" doName="Hz" fc="MX" />
+							<FCDA ldInst="MET" prefix="MET" lnClass="MMXU" lnInst="1" doName="TotW" fc="MX" />
+							<FCDA ldInst="MET" prefix="MET" lnClass="MMXU" lnInst="1" doName="TotVAr" fc="MX" />
+							<FCDA ldInst="MET" prefix="MET" lnClass="MMXU" lnInst="1" doName="TotVA" fc="MX" />
+							<FCDA ldInst="MET" prefix="MET" lnClass="MMXU" lnInst="1" doName="TotPF" fc="MX" />
+							<FCDA ldInst="MET" prefix="MET" lnClass="MSQI" lnInst="1" doName="SeqA" fc="MX" />
+							<FCDA ldInst="MET" prefix="MET" lnClass="MSQI" lnInst="1" doName="SeqV" fc="MX" />
+						</DataSet>
+						<DataSet name="BRDSet02">
+							<FCDA ldInst="ANN" prefix="MV" lnClass="GGIO" lnInst="13" doName="AnIn01" fc="MX" />
+							<FCDA ldInst="ANN" prefix="MV" lnClass="GGIO" lnInst="13" doName="AnIn02" fc="MX" />
+							<FCDA ldInst="ANN" prefix="MV" lnClass="GGIO" lnInst="13" doName="AnIn03" fc="MX" />
+							<FCDA ldInst="ANN" prefix="MV" lnClass="GGIO" lnInst="13" doName="AnIn04" fc="MX" />
+							<FCDA ldInst="ANN" prefix="MV" lnClass="GGIO" lnInst="13" doName="AnIn05" fc="MX" />
+							<FCDA ldInst="ANN" prefix="MV" lnClass="GGIO" lnInst="13" doName="AnIn06" fc="MX" />
+							<FCDA ldInst="ANN" prefix="MV" lnClass="GGIO" lnInst="13" doName="AnIn07" fc="MX" />
+							<FCDA ldInst="ANN" prefix="MV" lnClass="GGIO" lnInst="13" doName="AnIn08" fc="MX" />
+							<FCDA ldInst="ANN" prefix="SC" lnClass="GGIO" lnInst="14" doName="AnIn01" fc="MX" />
+							<FCDA ldInst="ANN" prefix="SC" lnClass="GGIO" lnInst="14" doName="AnIn02" fc="MX" />
+							<FCDA ldInst="ANN" prefix="SC" lnClass="GGIO" lnInst="14" doName="AnIn03" fc="MX" />
+							<FCDA ldInst="ANN" prefix="SC" lnClass="GGIO" lnInst="14" doName="AnIn04" fc="MX" />
+							<FCDA ldInst="ANN" prefix="SC" lnClass="GGIO" lnInst="14" doName="AnIn05" fc="MX" />
+							<FCDA ldInst="ANN" prefix="SC" lnClass="GGIO" lnInst="14" doName="AnIn06" fc="MX" />
+							<FCDA ldInst="ANN" prefix="SC" lnClass="GGIO" lnInst="14" doName="AnIn07" fc="MX" />
+							<FCDA ldInst="ANN" prefix="SC" lnClass="GGIO" lnInst="14" doName="AnIn08" fc="MX" />
+						</DataSet>
+						<DataSet name="BRDSet03">
+							<FCDA ldInst="PRO" prefix="TRIP" lnClass="PTRC" lnInst="1" doName="Tr" fc="ST" />
+							<FCDA ldInst="PRO" prefix="BK1" lnClass="XCBR" lnInst="1" doName="Pos" fc="ST" />
+							<FCDA ldInst="PRO" prefix="MC" lnClass="CSWI" lnInst="1" doName="Pos" fc="ST" />
+							<FCDA ldInst="ANN" prefix="IN" lnClass="GGIO" lnInst="1" doName="Ind01" fc="ST" />
+							<FCDA ldInst="ANN" prefix="IN" lnClass="GGIO" lnInst="1" doName="Ind02" fc="ST" />
+							<FCDA ldInst="ANN" prefix="IN" lnClass="GGIO" lnInst="1" doName="Ind03" fc="ST" />
+							<FCDA ldInst="ANN" prefix="IN" lnClass="GGIO" lnInst="1" doName="Ind04" fc="ST" />
+							<FCDA ldInst="ANN" prefix="IN" lnClass="GGIO" lnInst="1" doName="Ind05" fc="ST" />
+							<FCDA ldInst="ANN" prefix="IN" lnClass="GGIO" lnInst="1" doName="Ind06" fc="ST" />
+						</DataSet>
+						<DataSet name="BRDSet04">
+							<FCDA ldInst="ANN" prefix="TLED" lnClass="GGIO" lnInst="6" doName="Ind01" fc="ST" />
+							<FCDA ldInst="ANN" prefix="TLED" lnClass="GGIO" lnInst="6" doName="Ind02" fc="ST" />
+							<FCDA ldInst="ANN" prefix="TLED" lnClass="GGIO" lnInst="6" doName="Ind03" fc="ST" />
+							<FCDA ldInst="ANN" prefix="TLED" lnClass="GGIO" lnInst="6" doName="Ind04" fc="ST" />
+							<FCDA ldInst="ANN" prefix="TLED" lnClass="GGIO" lnInst="6" doName="Ind05" fc="ST" />
+							<FCDA ldInst="ANN" prefix="TLED" lnClass="GGIO" lnInst="6" doName="Ind06" fc="ST" />
+							<FCDA ldInst="ANN" prefix="TLED" lnClass="GGIO" lnInst="6" doName="Ind07" fc="ST" />
+							<FCDA ldInst="ANN" prefix="TLED" lnClass="GGIO" lnInst="6" doName="Ind08" fc="ST" />
+							<FCDA ldInst="ANN" prefix="TLED" lnClass="GGIO" lnInst="6" doName="Ind09" fc="ST" />
+							<FCDA ldInst="ANN" prefix="TLED" lnClass="GGIO" lnInst="6" doName="Ind10" fc="ST" />
+						</DataSet>
+						<DataSet name="BRDSet05">
+							<FCDA ldInst="ANN" prefix="SV" lnClass="GGIO" lnInst="3" doName="Ind01" fc="ST" />
+							<FCDA ldInst="ANN" prefix="SV" lnClass="GGIO" lnInst="3" doName="Ind02" fc="ST" />
+							<FCDA ldInst="ANN" prefix="SV" lnClass="GGIO" lnInst="3" doName="Ind03" fc="ST" />
+							<FCDA ldInst="ANN" prefix="SV" lnClass="GGIO" lnInst="3" doName="Ind04" fc="ST" />
+							<FCDA ldInst="ANN" prefix="SV" lnClass="GGIO" lnInst="3" doName="Ind05" fc="ST" />
+							<FCDA ldInst="ANN" prefix="SV" lnClass="GGIO" lnInst="3" doName="Ind06" fc="ST" />
+							<FCDA ldInst="ANN" prefix="SV" lnClass="GGIO" lnInst="3" doName="Ind07" fc="ST" />
+							<FCDA ldInst="ANN" prefix="SV" lnClass="GGIO" lnInst="3" doName="Ind08" fc="ST" />
+							<FCDA ldInst="ANN" prefix="SVT" lnClass="GGIO" lnInst="4" doName="Ind01" fc="ST" />
+							<FCDA ldInst="ANN" prefix="SVT" lnClass="GGIO" lnInst="4" doName="Ind02" fc="ST" />
+							<FCDA ldInst="ANN" prefix="SVT" lnClass="GGIO" lnInst="4" doName="Ind03" fc="ST" />
+							<FCDA ldInst="ANN" prefix="SVT" lnClass="GGIO" lnInst="4" doName="Ind04" fc="ST" />
+							<FCDA ldInst="ANN" prefix="SVT" lnClass="GGIO" lnInst="4" doName="Ind05" fc="ST" />
+							<FCDA ldInst="ANN" prefix="SVT" lnClass="GGIO" lnInst="4" doName="Ind06" fc="ST" />
+							<FCDA ldInst="ANN" prefix="SVT" lnClass="GGIO" lnInst="4" doName="Ind07" fc="ST" />
+							<FCDA ldInst="ANN" prefix="SVT" lnClass="GGIO" lnInst="4" doName="Ind08" fc="ST" />
+							<FCDA ldInst="ANN" prefix="LT" lnClass="GGIO" lnInst="5" doName="Ind01" fc="ST" />
+							<FCDA ldInst="ANN" prefix="LT" lnClass="GGIO" lnInst="5" doName="Ind02" fc="ST" />
+							<FCDA ldInst="ANN" prefix="LT" lnClass="GGIO" lnInst="5" doName="Ind03" fc="ST" />
+							<FCDA ldInst="ANN" prefix="LT" lnClass="GGIO" lnInst="5" doName="Ind04" fc="ST" />
+							<FCDA ldInst="ANN" prefix="LT" lnClass="GGIO" lnInst="5" doName="Ind05" fc="ST" />
+							<FCDA ldInst="ANN" prefix="LT" lnClass="GGIO" lnInst="5" doName="Ind06" fc="ST" />
+							<FCDA ldInst="ANN" prefix="LT" lnClass="GGIO" lnInst="5" doName="Ind07" fc="ST" />
+							<FCDA ldInst="ANN" prefix="LT" lnClass="GGIO" lnInst="5" doName="Ind08" fc="ST" />
+						</DataSet>
+						<DataSet name="BRDSet06">
+							<FCDA ldInst="CON" prefix="RB" lnClass="GGIO" lnInst="1" doName="SPCSO01" fc="ST" />
+							<FCDA ldInst="CON" prefix="RB" lnClass="GGIO" lnInst="1" doName="SPCSO02" fc="ST" />
+							<FCDA ldInst="CON" prefix="RB" lnClass="GGIO" lnInst="1" doName="SPCSO03" fc="ST" />
+							<FCDA ldInst="CON" prefix="RB" lnClass="GGIO" lnInst="1" doName="SPCSO04" fc="ST" />
+							<FCDA ldInst="CON" prefix="RB" lnClass="GGIO" lnInst="1" doName="SPCSO05" fc="ST" />
+							<FCDA ldInst="CON" prefix="RB" lnClass="GGIO" lnInst="1" doName="SPCSO06" fc="ST" />
+							<FCDA ldInst="CON" prefix="RB" lnClass="GGIO" lnInst="1" doName="SPCSO07" fc="ST" />
+							<FCDA ldInst="CON" prefix="RB" lnClass="GGIO" lnInst="1" doName="SPCSO08" fc="ST" />
+						</DataSet>
+						<DataSet name="BRDSet07">
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind001" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind002" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind003" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind004" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind005" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind006" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind007" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind008" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind009" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind010" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind011" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind012" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind013" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind014" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind015" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind016" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind017" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind018" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind019" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind020" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind021" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind022" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind023" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind024" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind025" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind026" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind027" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind028" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind029" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind030" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind031" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind032" fc="ST" />
+						</DataSet>
+						<DataSet name="GPDSet01">
+							<FCDA ldInst="PRO" prefix="BK1" lnClass="XCBR" lnInst="1" doName="Pos" daName="stVal" fc="ST" />
+							<FCDA ldInst="PRO" prefix="BK1" lnClass="XCBR" lnInst="1" doName="Pos" daName="q" fc="ST" />
+							<FCDA ldInst="CON" prefix="RB" lnClass="GGIO" lnInst="1" doName="SPCSO01" daName="stVal" fc="ST" />
+							<FCDA ldInst="CON" prefix="RB" lnClass="GGIO" lnInst="1" doName="SPCSO01" daName="q" fc="ST" />
+							<FCDA ldInst="CON" prefix="RB" lnClass="GGIO" lnInst="1" doName="SPCSO02" daName="stVal" fc="ST" />
+							<FCDA ldInst="CON" prefix="RB" lnClass="GGIO" lnInst="1" doName="SPCSO02" daName="q" fc="ST" />
+							<FCDA ldInst="CON" prefix="RB" lnClass="GGIO" lnInst="1" doName="SPCSO03" daName="stVal" fc="ST" />
+							<FCDA ldInst="CON" prefix="RB" lnClass="GGIO" lnInst="1" doName="SPCSO03" daName="q" fc="ST" />
+							<FCDA ldInst="CON" prefix="RB" lnClass="GGIO" lnInst="1" doName="SPCSO04" daName="stVal" fc="ST" />
+							<FCDA ldInst="CON" prefix="RB" lnClass="GGIO" lnInst="1" doName="SPCSO04" daName="q" fc="ST" />
+							<FCDA ldInst="CON" prefix="RB" lnClass="GGIO" lnInst="1" doName="SPCSO05" daName="stVal" fc="ST" />
+							<FCDA ldInst="CON" prefix="RB" lnClass="GGIO" lnInst="1" doName="SPCSO05" daName="q" fc="ST" />
+							<FCDA ldInst="CON" prefix="RB" lnClass="GGIO" lnInst="1" doName="SPCSO06" daName="stVal" fc="ST" />
+							<FCDA ldInst="CON" prefix="RB" lnClass="GGIO" lnInst="1" doName="SPCSO06" daName="q" fc="ST" />
+							<FCDA ldInst="CON" prefix="RB" lnClass="GGIO" lnInst="1" doName="SPCSO07" daName="stVal" fc="ST" />
+							<FCDA ldInst="CON" prefix="RB" lnClass="GGIO" lnInst="1" doName="SPCSO07" daName="q" fc="ST" />
+							<FCDA ldInst="CON" prefix="RB" lnClass="GGIO" lnInst="1" doName="SPCSO08" daName="stVal" fc="ST" />
+							<FCDA ldInst="CON" prefix="RB" lnClass="GGIO" lnInst="1" doName="SPCSO08" daName="q" fc="ST" />
+						</DataSet>
+						<DataSet name="URDSet01">
+							<FCDA ldInst="MET" prefix="MET" lnClass="MMXU" lnInst="1" doName="A" fc="MX" />
+							<FCDA ldInst="MET" prefix="MET" lnClass="MMXU" lnInst="1" doName="PhV" fc="MX" />
+							<FCDA ldInst="MET" prefix="MET" lnClass="MMXU" lnInst="1" doName="Hz" fc="MX" />
+							<FCDA ldInst="MET" prefix="MET" lnClass="MMXU" lnInst="1" doName="TotW" fc="MX" />
+							<FCDA ldInst="MET" prefix="MET" lnClass="MMXU" lnInst="1" doName="TotVAr" fc="MX" />
+							<FCDA ldInst="MET" prefix="MET" lnClass="MMXU" lnInst="1" doName="TotVA" fc="MX" />
+							<FCDA ldInst="MET" prefix="MET" lnClass="MMXU" lnInst="1" doName="TotPF" fc="MX" />
+							<FCDA ldInst="MET" prefix="MET" lnClass="MSQI" lnInst="1" doName="SeqA" fc="MX" />
+							<FCDA ldInst="MET" prefix="MET" lnClass="MSQI" lnInst="1" doName="SeqV" fc="MX" />
+						</DataSet>
+						<DataSet name="URDSet02">
+							<FCDA ldInst="ANN" prefix="MV" lnClass="GGIO" lnInst="13" doName="AnIn01" fc="MX" />
+							<FCDA ldInst="ANN" prefix="MV" lnClass="GGIO" lnInst="13" doName="AnIn02" fc="MX" />
+							<FCDA ldInst="ANN" prefix="MV" lnClass="GGIO" lnInst="13" doName="AnIn03" fc="MX" />
+							<FCDA ldInst="ANN" prefix="MV" lnClass="GGIO" lnInst="13" doName="AnIn04" fc="MX" />
+							<FCDA ldInst="ANN" prefix="MV" lnClass="GGIO" lnInst="13" doName="AnIn05" fc="MX" />
+							<FCDA ldInst="ANN" prefix="MV" lnClass="GGIO" lnInst="13" doName="AnIn06" fc="MX" />
+							<FCDA ldInst="ANN" prefix="MV" lnClass="GGIO" lnInst="13" doName="AnIn07" fc="MX" />
+							<FCDA ldInst="ANN" prefix="MV" lnClass="GGIO" lnInst="13" doName="AnIn08" fc="MX" />
+							<FCDA ldInst="ANN" prefix="SC" lnClass="GGIO" lnInst="14" doName="AnIn01" fc="MX" />
+							<FCDA ldInst="ANN" prefix="SC" lnClass="GGIO" lnInst="14" doName="AnIn02" fc="MX" />
+							<FCDA ldInst="ANN" prefix="SC" lnClass="GGIO" lnInst="14" doName="AnIn03" fc="MX" />
+							<FCDA ldInst="ANN" prefix="SC" lnClass="GGIO" lnInst="14" doName="AnIn04" fc="MX" />
+							<FCDA ldInst="ANN" prefix="SC" lnClass="GGIO" lnInst="14" doName="AnIn05" fc="MX" />
+							<FCDA ldInst="ANN" prefix="SC" lnClass="GGIO" lnInst="14" doName="AnIn06" fc="MX" />
+							<FCDA ldInst="ANN" prefix="SC" lnClass="GGIO" lnInst="14" doName="AnIn07" fc="MX" />
+							<FCDA ldInst="ANN" prefix="SC" lnClass="GGIO" lnInst="14" doName="AnIn08" fc="MX" />
+						</DataSet>
+						<DataSet name="URDSet03">
+							<FCDA ldInst="PRO" prefix="TRIP" lnClass="PTRC" lnInst="1" doName="Tr" fc="ST" />
+							<FCDA ldInst="PRO" prefix="BK1" lnClass="XCBR" lnInst="1" doName="Pos" fc="ST" />
+							<FCDA ldInst="PRO" prefix="MC" lnClass="CSWI" lnInst="1" doName="Pos" fc="ST" />
+							<FCDA ldInst="ANN" prefix="IN" lnClass="GGIO" lnInst="1" doName="Ind01" fc="ST" />
+							<FCDA ldInst="ANN" prefix="IN" lnClass="GGIO" lnInst="1" doName="Ind02" fc="ST" />
+							<FCDA ldInst="ANN" prefix="IN" lnClass="GGIO" lnInst="1" doName="Ind03" fc="ST" />
+							<FCDA ldInst="ANN" prefix="IN" lnClass="GGIO" lnInst="1" doName="Ind04" fc="ST" />
+							<FCDA ldInst="ANN" prefix="IN" lnClass="GGIO" lnInst="1" doName="Ind05" fc="ST" />
+							<FCDA ldInst="ANN" prefix="IN" lnClass="GGIO" lnInst="1" doName="Ind06" fc="ST" />
+						</DataSet>
+						<DataSet name="URDSet04">
+							<FCDA ldInst="ANN" prefix="TLED" lnClass="GGIO" lnInst="6" doName="Ind01" fc="ST" />
+							<FCDA ldInst="ANN" prefix="TLED" lnClass="GGIO" lnInst="6" doName="Ind02" fc="ST" />
+							<FCDA ldInst="ANN" prefix="TLED" lnClass="GGIO" lnInst="6" doName="Ind03" fc="ST" />
+							<FCDA ldInst="ANN" prefix="TLED" lnClass="GGIO" lnInst="6" doName="Ind04" fc="ST" />
+							<FCDA ldInst="ANN" prefix="TLED" lnClass="GGIO" lnInst="6" doName="Ind05" fc="ST" />
+							<FCDA ldInst="ANN" prefix="TLED" lnClass="GGIO" lnInst="6" doName="Ind06" fc="ST" />
+							<FCDA ldInst="ANN" prefix="TLED" lnClass="GGIO" lnInst="6" doName="Ind07" fc="ST" />
+							<FCDA ldInst="ANN" prefix="TLED" lnClass="GGIO" lnInst="6" doName="Ind08" fc="ST" />
+							<FCDA ldInst="ANN" prefix="TLED" lnClass="GGIO" lnInst="6" doName="Ind09" fc="ST" />
+							<FCDA ldInst="ANN" prefix="TLED" lnClass="GGIO" lnInst="6" doName="Ind10" fc="ST" />
+						</DataSet>
+						<DataSet name="URDSet05">
+							<FCDA ldInst="ANN" prefix="SV" lnClass="GGIO" lnInst="3" doName="Ind01" fc="ST" />
+							<FCDA ldInst="ANN" prefix="SV" lnClass="GGIO" lnInst="3" doName="Ind02" fc="ST" />
+							<FCDA ldInst="ANN" prefix="SV" lnClass="GGIO" lnInst="3" doName="Ind03" fc="ST" />
+							<FCDA ldInst="ANN" prefix="SV" lnClass="GGIO" lnInst="3" doName="Ind04" fc="ST" />
+							<FCDA ldInst="ANN" prefix="SV" lnClass="GGIO" lnInst="3" doName="Ind05" fc="ST" />
+							<FCDA ldInst="ANN" prefix="SV" lnClass="GGIO" lnInst="3" doName="Ind06" fc="ST" />
+							<FCDA ldInst="ANN" prefix="SV" lnClass="GGIO" lnInst="3" doName="Ind07" fc="ST" />
+							<FCDA ldInst="ANN" prefix="SV" lnClass="GGIO" lnInst="3" doName="Ind08" fc="ST" />
+							<FCDA ldInst="ANN" prefix="SVT" lnClass="GGIO" lnInst="4" doName="Ind01" fc="ST" />
+							<FCDA ldInst="ANN" prefix="SVT" lnClass="GGIO" lnInst="4" doName="Ind02" fc="ST" />
+							<FCDA ldInst="ANN" prefix="SVT" lnClass="GGIO" lnInst="4" doName="Ind03" fc="ST" />
+							<FCDA ldInst="ANN" prefix="SVT" lnClass="GGIO" lnInst="4" doName="Ind04" fc="ST" />
+							<FCDA ldInst="ANN" prefix="SVT" lnClass="GGIO" lnInst="4" doName="Ind05" fc="ST" />
+							<FCDA ldInst="ANN" prefix="SVT" lnClass="GGIO" lnInst="4" doName="Ind06" fc="ST" />
+							<FCDA ldInst="ANN" prefix="SVT" lnClass="GGIO" lnInst="4" doName="Ind07" fc="ST" />
+							<FCDA ldInst="ANN" prefix="SVT" lnClass="GGIO" lnInst="4" doName="Ind08" fc="ST" />
+							<FCDA ldInst="ANN" prefix="LT" lnClass="GGIO" lnInst="5" doName="Ind01" fc="ST" />
+							<FCDA ldInst="ANN" prefix="LT" lnClass="GGIO" lnInst="5" doName="Ind02" fc="ST" />
+							<FCDA ldInst="ANN" prefix="LT" lnClass="GGIO" lnInst="5" doName="Ind03" fc="ST" />
+							<FCDA ldInst="ANN" prefix="LT" lnClass="GGIO" lnInst="5" doName="Ind04" fc="ST" />
+							<FCDA ldInst="ANN" prefix="LT" lnClass="GGIO" lnInst="5" doName="Ind05" fc="ST" />
+							<FCDA ldInst="ANN" prefix="LT" lnClass="GGIO" lnInst="5" doName="Ind06" fc="ST" />
+							<FCDA ldInst="ANN" prefix="LT" lnClass="GGIO" lnInst="5" doName="Ind07" fc="ST" />
+							<FCDA ldInst="ANN" prefix="LT" lnClass="GGIO" lnInst="5" doName="Ind08" fc="ST" />
+						</DataSet>
+						<DataSet name="URDSet06">
+							<FCDA ldInst="CON" prefix="RB" lnClass="GGIO" lnInst="1" doName="SPCSO01" fc="ST" />
+							<FCDA ldInst="CON" prefix="RB" lnClass="GGIO" lnInst="1" doName="SPCSO02" fc="ST" />
+							<FCDA ldInst="CON" prefix="RB" lnClass="GGIO" lnInst="1" doName="SPCSO03" fc="ST" />
+							<FCDA ldInst="CON" prefix="RB" lnClass="GGIO" lnInst="1" doName="SPCSO04" fc="ST" />
+							<FCDA ldInst="CON" prefix="RB" lnClass="GGIO" lnInst="1" doName="SPCSO05" fc="ST" />
+							<FCDA ldInst="CON" prefix="RB" lnClass="GGIO" lnInst="1" doName="SPCSO06" fc="ST" />
+							<FCDA ldInst="CON" prefix="RB" lnClass="GGIO" lnInst="1" doName="SPCSO07" fc="ST" />
+							<FCDA ldInst="CON" prefix="RB" lnClass="GGIO" lnInst="1" doName="SPCSO08" fc="ST" />
+						</DataSet>
+						<DataSet name="URDSet07">
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind001" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind002" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind003" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind004" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind005" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind006" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind007" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind008" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind009" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind010" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind011" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind012" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind013" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind014" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind015" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind016" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind017" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind018" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind019" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind020" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind021" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind022" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind023" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind024" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind025" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind026" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind027" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind028" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind029" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind030" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind031" fc="ST" />
+							<FCDA ldInst="ANN" prefix="VB" lnClass="GGIO" lnInst="9" doName="Ind032" fc="ST" />
+						</DataSet>
+						<ReportControl name="URep" buffered="false" bufTime="250" intgPd="0" confRev="1" datSet="URDSet07">
+							<TrgOps dchg="true" qchg="true" dupd="false" period="true" />
+							<OptFields seqNum="true" timeStamp="true" dataSet="true" reasonCode="true" dataRef="false" entryID="false" configRef="false" />
+							<RptEnabled max="7" />
+						</ReportControl>
+						<ReportControl name="BRep" buffered="true" bufTime="500" intgPd="0" confRev="1" datSet="BRDSet07">
+							<TrgOps dchg="true" qchg="true" dupd="false" period="true" />
+							<OptFields seqNum="true" timeStamp="true" dataSet="true" reasonCode="true" dataRef="false" entryID="true" configRef="false" />
+							<RptEnabled max="7" />
+						</ReportControl>
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>SEL-849</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="ldNs">
+								<Val>IEC 61850-7-4:2003</Val>
+							</DAI>
+						</DOI>
+						<GSEControl name="GPub01" type="GOOSE" datSet="GPDSet01" appID="Mcc1Motor1" confRev="1" />
+						<GSEControl name="NewGOOSEMessage" type="GOOSE" datSet="BRDSet03" appID="TEMPLATE" confRev="1" />
+					</LN0>
+					<LN lnType="TEMPLATEANN.DevIDLPHD1" prefix="DevID" lnClass="LPHD" inst="1">
+						<DOI name="PhyNam">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="serNum">
+								<Val>1172791119</Val>
+							</DAI>
+							<DAI name="model">
+								<Val>084900100000010</Val>
+							</DAI>
+						</DOI>
+					</LN>
+				</LDevice>
+				<LDevice inst="CON">
+					<LN0 lnType="TEMPLATEANN.LLN0" lnClass="LLN0" inst="">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Control</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="ldNs">
+								<Val>IEC 61850-7-4:2003</Val>
+							</DAI>
+						</DOI>
+					</LN0>
+					<LN lnType="TEMPLATEANN.DevIDLPHD1" prefix="DevID" lnClass="LPHD" inst="1">
+						<DOI name="PhyNam">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="serNum">
+								<Val>1172791119</Val>
+							</DAI>
+							<DAI name="model">
+								<Val>084900100000010</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATECON.RBGGIO1" prefix="RB" lnClass="GGIO" inst="1">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="SPCSO01">
+							<DAI name="ctlModel">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+						</DOI>
+						<DOI name="SPCSO02">
+							<DAI name="ctlModel">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+						</DOI>
+						<DOI name="SPCSO03">
+							<DAI name="ctlModel">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+						</DOI>
+						<DOI name="SPCSO04">
+							<DAI name="ctlModel">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+						</DOI>
+						<DOI name="SPCSO05">
+							<DAI name="ctlModel">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+						</DOI>
+						<DOI name="SPCSO06">
+							<DAI name="ctlModel">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+						</DOI>
+						<DOI name="SPCSO07">
+							<DAI name="ctlModel">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+						</DOI>
+						<DOI name="SPCSO08">
+							<DAI name="ctlModel">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Control</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+				</LDevice>
+				<LDevice inst="MET">
+					<LN0 lnType="TEMPLATEANN.LLN0" lnClass="LLN0" inst="">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Metering</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="ldNs">
+								<Val>IEC 61850-7-4:2003</Val>
+							</DAI>
+						</DOI>
+					</LN0>
+					<LN lnType="TEMPLATEANN.DevIDLPHD1" prefix="DevID" lnClass="LPHD" inst="1">
+						<DOI name="PhyNam">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="serNum">
+								<Val>1172791119</Val>
+							</DAI>
+							<DAI name="model">
+								<Val>084900100000010</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEMET.METMDST1" prefix="MET" lnClass="MDST" inst="1">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="DmdA">
+							<SDI name="phsA">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>10</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsB">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>10</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsC">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>10</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+						<DOI name="PkDmdA">
+							<SDI name="phsA">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>10</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsB">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>10</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsC">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>10</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Demand Measurements</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="lnNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="PosVArh">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val>VArh</Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val>M</Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>500</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Energy, Reactive (MVArh) out of bus.</Val>
+							</DAI>
+						</DOI>
+						<DOI name="DmdWh">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val>Wh</Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val>M</Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>500</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Energy, Real (MWh) out of bus.</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NegVArh">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val>VArh</Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val>M</Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>500</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Energy, Reactive (MVArh) into bus.</Val>
+							</DAI>
+						</DOI>
+						<DOI name="VAh">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val>VAh</Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val>M</Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>500</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Energy, Apparent (MVAh)</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEMET.METMHAI1" prefix="MET" lnClass="MHAI" inst="1">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="ThdA">
+							<SDI name="phsA">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val></Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>3000</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsB">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val></Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>3000</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsC">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val></Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>3000</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+						<DOI name="ThdPhV">
+							<SDI name="phsA">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val></Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>3000</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsB">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val></Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>3000</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsC">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val></Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>3000</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+						<DOI name="ThdPPV">
+							<SDI name="phsAB">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val></Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>3000</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsBC">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val></Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>3000</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsCA">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val></Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>3000</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Harmonics</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEMET.METMMXU1" prefix="MET" lnClass="MMXU" inst="1">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Fundamental Measurements</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+						<DOI name="TotW">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val>Watts</Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val>k</Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>5</Val>
+							</DAI>
+							<DAI name="d">
+								<Val></Val>
+							</DAI>
+						</DOI>
+						<DOI name="TotVAr">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val>VAr</Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val>k</Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>5</Val>
+							</DAI>
+							<DAI name="d">
+								<Val></Val>
+							</DAI>
+						</DOI>
+						<DOI name="TotVA">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val>VA</Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val>k</Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>5</Val>
+							</DAI>
+							<DAI name="d">
+								<Val></Val>
+							</DAI>
+						</DOI>
+						<DOI name="TotPF">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>5000</Val>
+							</DAI>
+							<DAI name="d">
+								<Val></Val>
+							</DAI>
+						</DOI>
+						<DOI name="Hz">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val>Hz</Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>500</Val>
+							</DAI>
+							<DAI name="d">
+								<Val></Val>
+							</DAI>
+						</DOI>
+						<DOI name="PPV">
+							<SDI name="phsAB">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>V</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>10</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsBC">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>V</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>10</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsCA">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>V</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>10</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+						<DOI name="PhV">
+							<SDI name="phsA">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>V</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>10</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsB">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>V</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>10</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsC">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>V</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>10</Val>
+								</DAI>
+							</SDI>
+							<SDI name="res">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>V</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>10</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+						<DOI name="A">
+							<SDI name="phsA">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>10</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsB">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>10</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsC">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>10</Val>
+								</DAI>
+							</SDI>
+							<SDI name="neut">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>10</Val>
+								</DAI>
+							</SDI>
+							<SDI name="res">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>10</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEMET.METMSQI1" prefix="MET" lnClass="MSQI" inst="1">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="SeqA">
+							<SDI name="c1">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>10</Val>
+								</DAI>
+							</SDI>
+							<SDI name="c2">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>5</Val>
+								</DAI>
+							</SDI>
+							<SDI name="c3">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>5</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+						<DOI name="SeqV">
+							<SDI name="c1">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>V</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>10</Val>
+								</DAI>
+							</SDI>
+							<SDI name="c2">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>V</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>5</Val>
+								</DAI>
+							</SDI>
+							<SDI name="c3">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>V</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>5</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Sequence and Imbalance</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+						<DOI name="MaxImbA">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="d">
+								<Val></Val>
+							</DAI>
+						</DOI>
+						<DOI name="MaxImbV">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="d">
+								<Val></Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEMET.METMSTA1" prefix="MET" lnClass="MSTA" inst="1">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Metering Statistics</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+						<DOI name="AvAmps">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val>A</Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>10</Val>
+							</DAI>
+							<DAI name="d">
+								<Val></Val>
+							</DAI>
+						</DOI>
+						<DOI name="MaxA">
+							<SDI name="phsA">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsB">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsC">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="neut">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="res">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="MinA">
+							<SDI name="phsA">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsB">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsC">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="neut">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="res">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="AvVolts">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val>V</Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>10</Val>
+							</DAI>
+							<DAI name="d">
+								<Val></Val>
+							</DAI>
+						</DOI>
+						<DOI name="MaxPhV">
+							<SDI name="phsA">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>V</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>300</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsB">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>V</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>300</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsC">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>V</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>300</Val>
+								</DAI>
+							</SDI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="MinPhV">
+							<SDI name="phsA">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>V</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>300</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsB">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>V</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>300</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsC">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>V</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>300</Val>
+								</DAI>
+							</SDI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="MaxP2PV">
+							<SDI name="phsAB">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>V</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>300</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsBC">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>V</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>300</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsCA">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>V</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>300</Val>
+								</DAI>
+							</SDI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="MinP2PV">
+							<SDI name="phsAB">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>V</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>300</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsBC">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>V</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>300</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsCA">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>V</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>300</Val>
+								</DAI>
+							</SDI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="MaxVA">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val>VA</Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val>k</Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>40</Val>
+							</DAI>
+							<DAI name="d">
+								<Val></Val>
+							</DAI>
+						</DOI>
+						<DOI name="MinVA">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val>VA</Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val>k</Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>40</Val>
+							</DAI>
+							<DAI name="d">
+								<Val></Val>
+							</DAI>
+						</DOI>
+						<DOI name="MaxW">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val>Watts</Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val>k</Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>40</Val>
+							</DAI>
+							<DAI name="d">
+								<Val></Val>
+							</DAI>
+						</DOI>
+						<DOI name="MinW">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val>Watts</Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val>k</Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>40</Val>
+							</DAI>
+							<DAI name="d">
+								<Val></Val>
+							</DAI>
+						</DOI>
+						<DOI name="MaxVAr">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val>VAr</Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val>k</Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>40</Val>
+							</DAI>
+							<DAI name="d">
+								<Val></Val>
+							</DAI>
+						</DOI>
+						<DOI name="MinVAr">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val>VAr</Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val>k</Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>40</Val>
+							</DAI>
+							<DAI name="d">
+								<Val></Val>
+							</DAI>
+						</DOI>
+						<DOI name="MaxHz">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val>Hz</Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>500</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="MinHz">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val>Hz</Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>500</Val>
+							</DAI>
+							<DAI name="dataNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEMET.MOTORMMOT1" prefix="MOTOR" lnClass="MMOT" inst="1">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Motor Measurements</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="lnNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+						<DOI name="StrTcu">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Stator TCU</Val>
+							</DAI>
+						</DOI>
+						<DOI name="RtrTcu">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Rotor TCU</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Mload">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>1000</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Motor Load, pu of FLA</Val>
+							</DAI>
+						</DOI>
+						<DOI name="ThrmTp">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val>s</Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>10</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Thermal Trip in</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Trst">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>10</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Time to Reset</Val>
+							</DAI>
+						</DOI>
+						<DOI name="StrtAv">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>10</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Starts Available</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Mrt">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>10</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Motor Running Time</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NumStrt">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>10</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Number of Starts</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NumRstrt">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>10</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Number of Restarts</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NumEmrst">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>10</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Number of Emergency Starts</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NumConop">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>10</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Number of Contactor Operations</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NumBkrop">
+							<SDI name="units">
+								<DAI name="SIUnit">
+									<Val></Val>
+								</DAI>
+								<DAI name="multiplier">
+									<Val></Val>
+								</DAI>
+							</SDI>
+							<DAI name="db">
+								<Val>10</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Number of Breaker Operations</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEMET.RMSMMXU2" prefix="RMS" lnClass="MMXU" inst="2">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="PPV">
+							<SDI name="phsAB">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>V</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>10</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsBC">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>V</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>10</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsCA">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>V</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>10</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+						<DOI name="PhV">
+							<SDI name="phsA">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>V</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>10</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsB">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>V</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>10</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsC">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>V</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>10</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+						<DOI name="A">
+							<SDI name="phsA">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>10</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsB">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>10</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsC">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>10</Val>
+								</DAI>
+							</SDI>
+							<SDI name="neut">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>10</Val>
+								</DAI>
+							</SDI>
+							<SDI name="res">
+								<SDI name="units">
+									<DAI name="SIUnit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val></Val>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>10</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>RMS Measurements</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+				</LDevice>
+				<LDevice inst="PRO">
+					<LN0 lnType="TEMPLATEANN.LLN0" lnClass="LLN0" inst="">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="ldNs">
+								<Val>IEC 61850-7-4:2003</Val>
+							</DAI>
+						</DOI>
+					</LN0>
+					<LN lnType="TEMPLATEPRO.A49PTTR1" prefix="A49" lnClass="PTTR" inst="1">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.A55POPF1" prefix="A55" lnClass="POPF" inst="1">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.ABSLOPMRI1" prefix="ABSLO" lnClass="PMRI" inst="1">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.BFR1RBRF1" prefix="BFR1" lnClass="RBRF" inst="1">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.BK1XCBR1" prefix="BK1" lnClass="XCBR" inst="1">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Pos">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="BlkOpn">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="BlkCls">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.D1TPTOF1" prefix="D1T" lnClass="PTOF" inst="1">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.D1TPTOF1" prefix="D2T" lnClass="PTOF" inst="2">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEANN.DevIDLPHD1" prefix="DevID" lnClass="LPHD" inst="1">
+						<DOI name="PhyNam">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="serNum">
+								<Val>1172791119</Val>
+							</DAI>
+							<DAI name="model">
+								<Val>084900100000010</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.G1TPIOC5" prefix="G1T" lnClass="PIOC" inst="5">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.G1TPTOC4" prefix="G1T" lnClass="PTOC" inst="4">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.G1TPIOC5" prefix="G2T" lnClass="PIOC" inst="6">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.G1TPIOC5" prefix="GAF" lnClass="PIOC" inst="11">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.JALRMPMSS1" prefix="JALRM" lnClass="PMSS" inst="1">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.JALRMPMSS1" prefix="JTRIP" lnClass="PMSS" inst="2">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.LALRMPTUC1" prefix="LALRM" lnClass="PTUC" inst="1">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.JALRMPMSS1" prefix="LJTR" lnClass="PMSS" inst="3">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.LOPPTUV3" prefix="LOP" lnClass="PTUV" inst="3">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.LALRMPTUC1" prefix="LTRIP" lnClass="PTUC" inst="2">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.MCCSWI1" prefix="MC" lnClass="CSWI" inst="1">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Pos">
+							<DAI name="ctlModel">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.G1TPIOC5" prefix="N1T" lnClass="PIOC" inst="7">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.G1TPTOC4" prefix="N1T" lnClass="PTOC" inst="6">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.G1TPIOC5" prefix="N2T" lnClass="PIOC" inst="8">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.ABSLOPMRI1" prefix="NOSLO" lnClass="PMRI" inst="2">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.G1TPIOC5" prefix="P1T" lnClass="PIOC" inst="1">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.G1TPTOC4" prefix="P1T" lnClass="PTOC" inst="3">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.P1TPTOV1" prefix="P1T" lnClass="PTOV" inst="1">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.LOPPTUV3" prefix="P1T" lnClass="PTUV" inst="1">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.G1TPIOC5" prefix="P2T" lnClass="PIOC" inst="2">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.P1TPTOV1" prefix="P2T" lnClass="PTOV" inst="2">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.LOPPTUV3" prefix="P2T" lnClass="PTUV" inst="2">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.G1TPIOC5" prefix="PAF" lnClass="PIOC" inst="10">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.A49PTTR1" prefix="PTCT" lnClass="PTTR" inst="7">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.PWR1PDOP1" prefix="PWR1" lnClass="PDOP" inst="1">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.PWR1PDUP1" prefix="PWR1" lnClass="PDUP" inst="1">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.PWR1PDOP1" prefix="PWR2" lnClass="PDOP" inst="1">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.PWR1PDUP1" prefix="PWR2" lnClass="PDUP" inst="1">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.G1TPIOC5" prefix="Q1T" lnClass="PIOC" inst="9">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.G1TPTOC4" prefix="Q1T" lnClass="PTOC" inst="5">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.A49PTTR1" prefix="R49" lnClass="PTTR" inst="4">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.P1TPTOV1" prefix="RS59" lnClass="PTOV" inst="4">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.ABSLOPMRI1" prefix="RSLO" lnClass="PMRI" inst="5">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.A49PTTR1" prefix="S49" lnClass="PTTR" inst="3">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.SPDSALPZSU1" prefix="SPDSAL" lnClass="PZSU" inst="1">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.SPDSALPZSU1" prefix="SPDSTR" lnClass="PZSU" inst="2">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.P1TPTOV1" prefix="T47" lnClass="PTOV" inst="3">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.A49PTTR1" prefix="T49" lnClass="PTTR" inst="2">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.A55POPF1" prefix="T55" lnClass="POPF" inst="2">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.ABSLOPMRI1" prefix="TBSLO" lnClass="PMRI" inst="3">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.ABSLOPMRI1" prefix="THRMLO" lnClass="PMRI" inst="4">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.TOL1PAFD1" prefix="TOL1" lnClass="PAFD" inst="1">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="lnNs">
+								<Val>SEL-61850:2006</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.TRIPPTRC1" prefix="TRIP" lnClass="PTRC" inst="1">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.G1TPTOC4" prefix="UB46A" lnClass="PTOC" inst="1">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.G1TPTOC4" prefix="UB46T" lnClass="PTOC" inst="2">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.ABSLOPMRI1" prefix="UVRSLO" lnClass="PMRI" inst="5">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN lnType="TEMPLATEPRO.LOPPTUV3" prefix="UVTR" lnClass="PTUV" inst="4">
+						<DOI name="Mod">
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>FID=SEL-849-R106-V2-Z003002-D20170814</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+				</LDevice>
+			</Server>
+		</AccessPoint>
+	</IED>
+	<DataTypeTemplates>
+		<LNodeType id="TEMPLATEMET.METMDST1" lnClass="MDST">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="DmdA" type="TEMPLATEMET.METMDST1.DmdA" />
+			<DO name="PkDmdA" type="TEMPLATEMET.METMDST1.DmdA" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="NamPlt" type="TEMPLATEMET.METMDST1.NamPlt" />
+			<DO name="PosVArh" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="DmdWh" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="NegVArh" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="VAh" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEMET.MOTORMMOT1" lnClass="MMOT">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="NamPlt" type="TEMPLATEMET.METMDST1.NamPlt" />
+			<DO name="StrTcu" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="RtrTcu" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="Mload" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="ThrmTp" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="Trst" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="StrtAv" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="Mrt" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="NumStrt" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="NumRstrt" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="NumEmrst" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="NumConop" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="NumBkrop" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEPRO.TOL1PAFD1" lnClass="PAFD">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="Str" type="TEMPLATEPRO.A55POPF1.Str" />
+			<DO name="Op" type="TEMPLATEPRO.A49PTTR1.Op" />
+			<DO name="NamPlt" type="TEMPLATEMET.METMDST1.NamPlt" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEANN.ALMGGIO10" lnClass="GGIO">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="Ind01" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind02" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind03" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind04" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind05" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind06" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind07" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind08" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind09" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind10" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind11" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind12" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind13" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind14" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind15" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind16" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="NamPlt" type="TEMPLATEANN.ALMGGIO10.NamPlt" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEANN.ETHGGIO11" lnClass="GGIO">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="Ind01" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind02" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind03" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind04" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind05" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind06" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind07" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind08" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="NamPlt" type="TEMPLATEANN.ALMGGIO10.NamPlt" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEANN.INGGIO1" lnClass="GGIO">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="Ind01" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind02" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind03" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind04" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind05" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind06" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="NamPlt" type="TEMPLATEANN.ALMGGIO10.NamPlt" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEANN.MISCGGIO8" lnClass="GGIO">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="Ind01" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind02" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind03" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind04" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind05" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind06" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind07" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind08" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind09" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind10" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind11" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind12" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind13" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind14" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind15" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind16" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind17" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind18" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind19" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind20" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind21" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind22" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind23" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind24" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind25" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind26" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind27" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind28" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind29" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind30" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind31" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind32" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="NamPlt" type="TEMPLATEANN.ALMGGIO10.NamPlt" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEANN.MVGGIO13" lnClass="GGIO">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="NamPlt" type="TEMPLATEANN.ALMGGIO10.NamPlt" />
+			<DO name="AnIn01" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="AnIn02" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="AnIn03" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="AnIn04" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="AnIn05" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="AnIn06" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="AnIn07" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="AnIn08" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEANN.OUTGGIO2" lnClass="GGIO">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="Ind01" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind02" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind03" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind04" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="NamPlt" type="TEMPLATEANN.ALMGGIO10.NamPlt" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEANN.RAGGIO15" lnClass="GGIO">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="Ra001" type="TEMPLATEANN.RAGGIO15.Ra001" />
+			<DO name="Ra002" type="TEMPLATEANN.RAGGIO15.Ra001" />
+			<DO name="Ra003" type="TEMPLATEANN.RAGGIO15.Ra001" />
+			<DO name="Ra004" type="TEMPLATEANN.RAGGIO15.Ra001" />
+			<DO name="Ra005" type="TEMPLATEANN.RAGGIO15.Ra001" />
+			<DO name="Ra006" type="TEMPLATEANN.RAGGIO15.Ra001" />
+			<DO name="Ra007" type="TEMPLATEANN.RAGGIO15.Ra001" />
+			<DO name="Ra008" type="TEMPLATEANN.RAGGIO15.Ra001" />
+			<DO name="Ra009" type="TEMPLATEANN.RAGGIO15.Ra001" />
+			<DO name="Ra010" type="TEMPLATEANN.RAGGIO15.Ra001" />
+			<DO name="Ra011" type="TEMPLATEANN.RAGGIO15.Ra001" />
+			<DO name="Ra012" type="TEMPLATEANN.RAGGIO15.Ra001" />
+			<DO name="Ra013" type="TEMPLATEANN.RAGGIO15.Ra001" />
+			<DO name="Ra014" type="TEMPLATEANN.RAGGIO15.Ra001" />
+			<DO name="Ra015" type="TEMPLATEANN.RAGGIO15.Ra001" />
+			<DO name="Ra016" type="TEMPLATEANN.RAGGIO15.Ra001" />
+			<DO name="Ra017" type="TEMPLATEANN.RAGGIO15.Ra001" />
+			<DO name="Ra018" type="TEMPLATEANN.RAGGIO15.Ra001" />
+			<DO name="Ra019" type="TEMPLATEANN.RAGGIO15.Ra001" />
+			<DO name="Ra020" type="TEMPLATEANN.RAGGIO15.Ra001" />
+			<DO name="Ra021" type="TEMPLATEANN.RAGGIO15.Ra001" />
+			<DO name="Ra022" type="TEMPLATEANN.RAGGIO15.Ra001" />
+			<DO name="Ra023" type="TEMPLATEANN.RAGGIO15.Ra001" />
+			<DO name="Ra024" type="TEMPLATEANN.RAGGIO15.Ra001" />
+			<DO name="Ra025" type="TEMPLATEANN.RAGGIO15.Ra001" />
+			<DO name="Ra026" type="TEMPLATEANN.RAGGIO15.Ra001" />
+			<DO name="Ra027" type="TEMPLATEANN.RAGGIO15.Ra001" />
+			<DO name="Ra028" type="TEMPLATEANN.RAGGIO15.Ra001" />
+			<DO name="Ra029" type="TEMPLATEANN.RAGGIO15.Ra001" />
+			<DO name="Ra030" type="TEMPLATEANN.RAGGIO15.Ra001" />
+			<DO name="Ra031" type="TEMPLATEANN.RAGGIO15.Ra001" />
+			<DO name="Ra032" type="TEMPLATEANN.RAGGIO15.Ra001" />
+			<DO name="NamPlt" type="TEMPLATEANN.ALMGGIO10.NamPlt" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEANN.TLEDGGIO6" lnClass="GGIO">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="Ind01" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind02" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind03" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind04" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind05" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind06" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind07" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind08" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind09" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind10" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="NamPlt" type="TEMPLATEANN.ALMGGIO10.NamPlt" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEANN.VBGGIO9" lnClass="GGIO">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="Ind001" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind002" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind003" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind004" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind005" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind006" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind007" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind008" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind009" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind010" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind011" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind012" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind013" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind014" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind015" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind016" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind017" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind018" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind019" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind020" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind021" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind022" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind023" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind024" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind025" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind026" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind027" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind028" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind029" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind030" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind031" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="Ind032" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="NamPlt" type="TEMPLATEANN.ALMGGIO10.NamPlt" />
+		</LNodeType>
+		<LNodeType id="TEMPLATECON.RBGGIO1" lnClass="GGIO">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="SPCSO01" type="TEMPLATECON.RBGGIO1.SPCSO01" />
+			<DO name="SPCSO02" type="TEMPLATECON.RBGGIO1.SPCSO01" />
+			<DO name="SPCSO03" type="TEMPLATECON.RBGGIO1.SPCSO01" />
+			<DO name="SPCSO04" type="TEMPLATECON.RBGGIO1.SPCSO01" />
+			<DO name="SPCSO05" type="TEMPLATECON.RBGGIO1.SPCSO01" />
+			<DO name="SPCSO06" type="TEMPLATECON.RBGGIO1.SPCSO01" />
+			<DO name="SPCSO07" type="TEMPLATECON.RBGGIO1.SPCSO01" />
+			<DO name="SPCSO08" type="TEMPLATECON.RBGGIO1.SPCSO01" />
+			<DO name="NamPlt" type="TEMPLATEANN.ALMGGIO10.NamPlt" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEANN.LLN0" lnClass="LLN0">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="NamPlt" type="TEMPLATEANN.LLN0.NamPlt" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEANN.DevIDLPHD1" lnClass="LPHD">
+			<DO name="PhyHealth" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="Proxy" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="PhyNam" type="TEMPLATEANN.DevIDLPHD1.PhyNam" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEMET.METMHAI1" lnClass="MHAI">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="ThdA" type="TEMPLATEMET.METMDST1.DmdA" />
+			<DO name="ThdPhV" type="TEMPLATEMET.METMDST1.DmdA" />
+			<DO name="ThdPPV" type="TEMPLATEMET.METMHAI1.ThdPPV" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="NamPlt" type="TEMPLATEANN.ALMGGIO10.NamPlt" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEMET.METMMXU1" lnClass="MMXU">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="NamPlt" type="TEMPLATEANN.ALMGGIO10.NamPlt" />
+			<DO name="TotW" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="TotVAr" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="TotVA" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="TotPF" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="Hz" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="PPV" type="TEMPLATEMET.METMMXU1.PPV" />
+			<DO name="PhV" type="TEMPLATEMET.METMMXU1.PhV" />
+			<DO name="A" type="TEMPLATEMET.METMMXU1.A" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEMET.RMSMMXU2" lnClass="MMXU">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="PPV" type="TEMPLATEMET.METMHAI1.ThdPPV" />
+			<DO name="PhV" type="TEMPLATEMET.METMDST1.DmdA" />
+			<DO name="A" type="TEMPLATEMET.RMSMMXU2.A" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="NamPlt" type="TEMPLATEANN.ALMGGIO10.NamPlt" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEMET.METMSQI1" lnClass="MSQI">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="SeqA" type="TEMPLATEMET.METMSQI1.SeqA" />
+			<DO name="SeqV" type="TEMPLATEMET.METMSQI1.SeqA" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="NamPlt" type="TEMPLATEANN.ALMGGIO10.NamPlt" />
+			<DO name="MaxImbA" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="MaxImbV" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEMET.METMSTA1" lnClass="MSTA">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="NamPlt" type="TEMPLATEANN.ALMGGIO10.NamPlt" />
+			<DO name="AvAmps" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="MaxA" type="TEMPLATEMET.METMSTA1.MaxA" />
+			<DO name="MinA" type="TEMPLATEMET.METMSTA1.MaxA" />
+			<DO name="AvVolts" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="MaxPhV" type="TEMPLATEMET.METMSTA1.MaxPhV" />
+			<DO name="MinPhV" type="TEMPLATEMET.METMSTA1.MaxPhV" />
+			<DO name="MaxP2PV" type="TEMPLATEMET.METMSTA1.MaxP2PV" />
+			<DO name="MinP2PV" type="TEMPLATEMET.METMSTA1.MaxP2PV" />
+			<DO name="MaxVA" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="MinVA" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="MaxW" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="MinW" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="MaxVAr" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="MinVAr" type="TEMPLATEANN.MVGGIO13.AnIn01" />
+			<DO name="MaxHz" type="TEMPLATEANN.RAGGIO15.Ra001" />
+			<DO name="MinHz" type="TEMPLATEANN.RAGGIO15.Ra001" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEPRO.PWR1PDOP1" lnClass="PDOP">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="Str" type="TEMPLATEPRO.A55POPF1.Str" />
+			<DO name="Op" type="TEMPLATEPRO.A49PTTR1.Op" />
+			<DO name="NamPlt" type="TEMPLATEANN.ALMGGIO10.NamPlt" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEPRO.PWR1PDUP1" lnClass="PDUP">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="Str" type="TEMPLATEPRO.A55POPF1.Str" />
+			<DO name="Op" type="TEMPLATEPRO.A49PTTR1.Op" />
+			<DO name="NamPlt" type="TEMPLATEANN.ALMGGIO10.NamPlt" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEPRO.G1TPIOC5" lnClass="PIOC">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="Str" type="TEMPLATEPRO.A55POPF1.Str" />
+			<DO name="Op" type="TEMPLATEPRO.A49PTTR1.Op" />
+			<DO name="NamPlt" type="TEMPLATEANN.ALMGGIO10.NamPlt" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEPRO.ABSLOPMRI1" lnClass="PMRI">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="Op" type="TEMPLATEPRO.A49PTTR1.Op" />
+			<DO name="NamPlt" type="TEMPLATEANN.ALMGGIO10.NamPlt" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEPRO.JALRMPMSS1" lnClass="PMSS">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="Str" type="TEMPLATEPRO.A55POPF1.Str" />
+			<DO name="Op" type="TEMPLATEPRO.A49PTTR1.Op" />
+			<DO name="NamPlt" type="TEMPLATEANN.ALMGGIO10.NamPlt" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEPRO.A55POPF1" lnClass="POPF">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="Str" type="TEMPLATEPRO.A55POPF1.Str" />
+			<DO name="Op" type="TEMPLATEPRO.A49PTTR1.Op" />
+			<DO name="NamPlt" type="TEMPLATEANN.ALMGGIO10.NamPlt" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEPRO.G1TPTOC4" lnClass="PTOC">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="Str" type="TEMPLATEPRO.A55POPF1.Str" />
+			<DO name="Op" type="TEMPLATEPRO.A49PTTR1.Op" />
+			<DO name="NamPlt" type="TEMPLATEANN.ALMGGIO10.NamPlt" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEPRO.D1TPTOF1" lnClass="PTOF">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="Str" type="TEMPLATEPRO.A55POPF1.Str" />
+			<DO name="Op" type="TEMPLATEPRO.A49PTTR1.Op" />
+			<DO name="NamPlt" type="TEMPLATEANN.ALMGGIO10.NamPlt" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEPRO.P1TPTOV1" lnClass="PTOV">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="Str" type="TEMPLATEPRO.A55POPF1.Str" />
+			<DO name="Op" type="TEMPLATEPRO.A49PTTR1.Op" />
+			<DO name="NamPlt" type="TEMPLATEANN.ALMGGIO10.NamPlt" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEPRO.TRIPPTRC1" lnClass="PTRC">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="Tr" type="TEMPLATEPRO.A49PTTR1.Op" />
+			<DO name="NamPlt" type="TEMPLATEANN.ALMGGIO10.NamPlt" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEPRO.A49PTTR1" lnClass="PTTR">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="Op" type="TEMPLATEPRO.A49PTTR1.Op" />
+			<DO name="NamPlt" type="TEMPLATEANN.ALMGGIO10.NamPlt" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEPRO.LALRMPTUC1" lnClass="PTUC">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="Str" type="TEMPLATEPRO.A55POPF1.Str" />
+			<DO name="Op" type="TEMPLATEPRO.A49PTTR1.Op" />
+			<DO name="NamPlt" type="TEMPLATEANN.ALMGGIO10.NamPlt" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEPRO.LOPPTUV3" lnClass="PTUV">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="Str" type="TEMPLATEPRO.A55POPF1.Str" />
+			<DO name="Op" type="TEMPLATEPRO.A49PTTR1.Op" />
+			<DO name="NamPlt" type="TEMPLATEANN.ALMGGIO10.NamPlt" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEPRO.SPDSALPZSU1" lnClass="PZSU">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="Str" type="TEMPLATEPRO.A55POPF1.Str" />
+			<DO name="Op" type="TEMPLATEPRO.A49PTTR1.Op" />
+			<DO name="NamPlt" type="TEMPLATEANN.ALMGGIO10.NamPlt" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEPRO.BFR1RBRF1" lnClass="RBRF">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="Str" type="TEMPLATEPRO.A55POPF1.Str" />
+			<DO name="OpEx" type="TEMPLATEPRO.A49PTTR1.Op" />
+			<DO name="NamPlt" type="TEMPLATEANN.ALMGGIO10.NamPlt" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEPRO.BK1XCBR1" lnClass="XCBR">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="Loc" type="TEMPLATEANN.ALMGGIO10.Ind01" />
+			<DO name="OpCnt" type="TEMPLATEPRO.BK1XCBR1.OpCnt" />
+			<DO name="Pos" type="TEMPLATEPRO.BK1XCBR1.Pos" />
+			<DO name="BlkOpn" type="TEMPLATEPRO.BK1XCBR1.BlkOpn" />
+			<DO name="BlkCls" type="TEMPLATEPRO.BK1XCBR1.BlkOpn" />
+			<DO name="CBOpCap" type="TEMPLATEPRO.BK1XCBR1.CBOpCap" />
+			<DO name="NamPlt" type="TEMPLATEANN.ALMGGIO10.NamPlt" />
+		</LNodeType>
+		<LNodeType id="TEMPLATEPRO.MCCSWI1" lnClass="CSWI">
+			<DO name="Mod" type="TEMPLATEANN.LLN0.Mod" />
+			<DO name="Beh" type="TEMPLATEANN.LLN0.Beh" />
+			<DO name="Health" type="TEMPLATEANN.LLN0.Health" />
+			<DO name="Pos" type="TEMPLATEPRO.MCCSWI1.Pos" />
+			<DO name="OpOpn" type="TEMPLATEPRO.A49PTTR1.Op" />
+			<DO name="OpCls" type="TEMPLATEPRO.A49PTTR1.Op" />
+			<DO name="NamPlt" type="TEMPLATEANN.ALMGGIO10.NamPlt" />
+		</LNodeType>
+		<DOType id="TEMPLATEPRO.A55POPF1.Str" cdc="ACD">
+			<DA name="general" fc="ST" bType="BOOLEAN" />
+			<DA name="dirGeneral" fc="ST" bType="Enum" type="dir" />
+			<DA name="q" fc="ST" bType="Quality" />
+			<DA name="t" fc="ST" bType="Timestamp" />
+		</DOType>
+		<DOType id="TEMPLATEPRO.A49PTTR1.Op" cdc="ACT">
+			<DA name="general" fc="ST" bType="BOOLEAN" />
+			<DA name="q" fc="ST" bType="Quality" />
+			<DA name="t" fc="ST" bType="Timestamp" />
+		</DOType>
+		<DOType id="TEMPLATEMET.METMDST1.DmdA.phsA" cdc="CMV">
+			<DA name="instCVal" fc="MX" bType="Struct" type="TEMPLATEMET.METMDST1.DmdA.phsA.instCVal" />
+			<DA name="cVal" fc="MX" bType="Struct" type="TEMPLATEMET.METMDST1.DmdA.phsA.instCVal" />
+			<DA name="q" fc="MX" bType="Quality" />
+			<DA name="t" fc="MX" bType="Timestamp" />
+			<DA name="units" fc="CF" bType="Struct" type="TEMPLATEANN.MVGGIO13.AnIn01.units" />
+			<DA name="db" fc="CF" bType="INT32U" />
+		</DOType>
+		<DOType id="TEMPLATEMET.METMMXU1.PPV.phsAB" cdc="CMV">
+			<DA name="instCVal" fc="MX" bType="Struct" type="TEMPLATEMET.METMMXU1.PPV.phsAB.instCVal" />
+			<DA name="cVal" fc="MX" bType="Struct" type="TEMPLATEMET.METMMXU1.PPV.phsAB.instCVal" />
+			<DA name="q" fc="MX" bType="Quality" />
+			<DA name="t" fc="MX" bType="Timestamp" />
+			<DA name="units" fc="CF" bType="Struct" type="TEMPLATEANN.MVGGIO13.AnIn01.units" />
+			<DA name="db" fc="CF" bType="INT32U" />
+		</DOType>
+		<DOType id="TEMPLATEMET.METMHAI1.ThdPPV" cdc="DEL">
+			<SDO name="phsAB" type="TEMPLATEMET.METMDST1.DmdA.phsA" />
+			<SDO name="phsBC" type="TEMPLATEMET.METMDST1.DmdA.phsA" />
+			<SDO name="phsCA" type="TEMPLATEMET.METMDST1.DmdA.phsA" />
+		</DOType>
+		<DOType id="TEMPLATEMET.METMMXU1.PPV" cdc="DEL">
+			<SDO name="phsAB" type="TEMPLATEMET.METMMXU1.PPV.phsAB" />
+			<SDO name="phsBC" type="TEMPLATEMET.METMMXU1.PPV.phsAB" />
+			<SDO name="phsCA" type="TEMPLATEMET.METMMXU1.PPV.phsAB" />
+		</DOType>
+		<DOType id="TEMPLATEMET.METMSTA1.MaxP2PV" cdc="DEL">
+			<SDO name="phsAB" type="TEMPLATEMET.METMDST1.DmdA.phsA" />
+			<SDO name="phsBC" type="TEMPLATEMET.METMDST1.DmdA.phsA" />
+			<SDO name="phsCA" type="TEMPLATEMET.METMDST1.DmdA.phsA" />
+			<DA name="dataNs" fc="EX" bType="VisString255" />
+		</DOType>
+		<DOType id="TEMPLATEPRO.BK1XCBR1.Pos" cdc="DPC">
+			<DA name="stVal" fc="ST" bType="Dbpos" />
+			<DA name="q" fc="ST" bType="Quality" />
+			<DA name="t" fc="ST" bType="Timestamp" />
+			<DA name="ctlModel" fc="CF" bType="Enum" type="ctlModel" />
+		</DOType>
+		<DOType id="TEMPLATEPRO.MCCSWI1.Pos" cdc="DPC">
+			<DA name="stVal" fc="ST" bType="Dbpos" />
+			<DA name="q" fc="ST" bType="Quality" />
+			<DA name="t" fc="ST" bType="Timestamp" />
+			<DA name="Oper" fc="CO" bType="Struct" type="TEMPLATECON.RBGGIO1.SPCSO01.Oper" />
+			<DA name="ctlModel" fc="CF" bType="Enum" type="ctlModel" />
+		</DOType>
+		<DOType id="TEMPLATEANN.DevIDLPHD1.PhyNam" cdc="DPL">
+			<DA name="vendor" fc="DC" bType="VisString255" />
+			<DA name="serNum" fc="DC" bType="VisString255" />
+			<DA name="model" fc="DC" bType="VisString255" />
+		</DOType>
+		<DOType id="TEMPLATEANN.LLN0.Mod" cdc="INC">
+			<DA name="stVal" fc="ST" bType="Enum" type="Mod" />
+			<DA name="q" fc="ST" bType="Quality" />
+			<DA name="t" fc="ST" bType="Timestamp" />
+			<DA name="ctlModel" fc="CF" bType="Enum" type="ctlModel" />
+		</DOType>
+		<DOType id="TEMPLATEANN.LLN0.Beh" cdc="INS">
+			<DA name="stVal" fc="ST" bType="Enum" type="Beh" />
+			<DA name="q" fc="ST" bType="Quality" />
+			<DA name="t" fc="ST" bType="Timestamp" />
+		</DOType>
+		<DOType id="TEMPLATEANN.LLN0.Health" cdc="INS">
+			<DA name="stVal" fc="ST" bType="Enum" type="Health" />
+			<DA name="q" fc="ST" bType="Quality" />
+			<DA name="t" fc="ST" bType="Timestamp" />
+		</DOType>
+		<DOType id="TEMPLATEPRO.BK1XCBR1.OpCnt" cdc="INS">
+			<DA name="stVal" fc="ST" bType="INT32" />
+			<DA name="q" fc="ST" bType="Quality" />
+			<DA name="t" fc="ST" bType="Timestamp" />
+		</DOType>
+		<DOType id="TEMPLATEPRO.BK1XCBR1.CBOpCap" cdc="INS">
+			<DA name="stVal" fc="ST" bType="Enum" type="CBOpCap" />
+			<DA name="q" fc="ST" bType="Quality" />
+			<DA name="t" fc="ST" bType="Timestamp" />
+		</DOType>
+		<DOType id="TEMPLATEANN.LLN0.NamPlt" cdc="LPL">
+			<DA name="vendor" fc="DC" bType="VisString255" />
+			<DA name="swRev" fc="DC" bType="VisString255" />
+			<DA name="d" fc="DC" bType="VisString255" />
+			<DA name="configRev" fc="DC" bType="VisString255" />
+			<DA name="ldNs" fc="EX" bType="VisString255" />
+		</DOType>
+		<DOType id="TEMPLATEANN.ALMGGIO10.NamPlt" cdc="LPL">
+			<DA name="vendor" fc="DC" bType="VisString255" />
+			<DA name="swRev" fc="DC" bType="VisString255" />
+			<DA name="d" fc="DC" bType="VisString255" />
+			<DA name="configRev" fc="DC" bType="VisString255" />
+		</DOType>
+		<DOType id="TEMPLATEMET.METMDST1.NamPlt" cdc="LPL">
+			<DA name="vendor" fc="DC" bType="VisString255" />
+			<DA name="swRev" fc="DC" bType="VisString255" />
+			<DA name="d" fc="DC" bType="VisString255" />
+			<DA name="configRev" fc="DC" bType="VisString255" />
+			<DA name="lnNs" fc="EX" bType="VisString255" />
+		</DOType>
+		<DOType id="TEMPLATEANN.MVGGIO13.AnIn01" cdc="MV">
+			<DA name="instMag" fc="MX" bType="Struct" type="TEMPLATEANN.MVGGIO13.AnIn01.instMag" />
+			<DA name="mag" fc="MX" bType="Struct" type="TEMPLATEANN.MVGGIO13.AnIn01.instMag" />
+			<DA name="q" fc="MX" bType="Quality" />
+			<DA name="t" fc="MX" bType="Timestamp" />
+			<DA name="units" fc="CF" bType="Struct" type="TEMPLATEANN.MVGGIO13.AnIn01.units" />
+			<DA name="db" fc="CF" bType="INT32U" />
+			<DA name="d" fc="DC" bType="VisString255" />
+		</DOType>
+		<DOType id="TEMPLATEANN.RAGGIO15.Ra001" cdc="MV">
+			<DA name="instMag" fc="MX" bType="Struct" type="TEMPLATEANN.MVGGIO13.AnIn01.instMag" />
+			<DA name="mag" fc="MX" bType="Struct" type="TEMPLATEANN.MVGGIO13.AnIn01.instMag" />
+			<DA name="q" fc="MX" bType="Quality" />
+			<DA name="t" fc="MX" bType="Timestamp" />
+			<DA name="units" fc="CF" bType="Struct" type="TEMPLATEANN.MVGGIO13.AnIn01.units" />
+			<DA name="db" fc="CF" bType="INT32U" />
+			<DA name="dataNs" fc="EX" bType="VisString255" />
+		</DOType>
+		<DOType id="TEMPLATEMET.METMSQI1.SeqA" cdc="SEQ">
+			<SDO name="c1" type="TEMPLATEMET.METMMXU1.PPV.phsAB" />
+			<SDO name="c2" type="TEMPLATEMET.METMMXU1.PPV.phsAB" />
+			<SDO name="c3" type="TEMPLATEMET.METMMXU1.PPV.phsAB" />
+			<DA name="seqT" fc="MX" bType="Enum" type="seqT" />
+		</DOType>
+		<DOType id="TEMPLATECON.RBGGIO1.SPCSO01" cdc="SPC">
+			<DA name="stVal" fc="ST" bType="BOOLEAN" />
+			<DA name="q" fc="ST" bType="Quality" />
+			<DA name="t" fc="ST" bType="Timestamp" />
+			<DA name="Oper" fc="CO" bType="Struct" type="TEMPLATECON.RBGGIO1.SPCSO01.Oper" />
+			<DA name="ctlModel" fc="CF" bType="Enum" type="ctlModel" />
+		</DOType>
+		<DOType id="TEMPLATEPRO.BK1XCBR1.BlkOpn" cdc="SPC">
+			<DA name="stVal" fc="ST" bType="BOOLEAN" />
+			<DA name="q" fc="ST" bType="Quality" />
+			<DA name="t" fc="ST" bType="Timestamp" />
+			<DA name="ctlModel" fc="CF" bType="Enum" type="ctlModel" />
+		</DOType>
+		<DOType id="TEMPLATEANN.ALMGGIO10.Ind01" cdc="SPS">
+			<DA name="stVal" fc="ST" bType="BOOLEAN" />
+			<DA name="q" fc="ST" bType="Quality" />
+			<DA name="t" fc="ST" bType="Timestamp" />
+		</DOType>
+		<DOType id="TEMPLATEMET.METMDST1.DmdA" cdc="WYE">
+			<SDO name="phsA" type="TEMPLATEMET.METMDST1.DmdA.phsA" />
+			<SDO name="phsB" type="TEMPLATEMET.METMDST1.DmdA.phsA" />
+			<SDO name="phsC" type="TEMPLATEMET.METMDST1.DmdA.phsA" />
+		</DOType>
+		<DOType id="TEMPLATEMET.METMMXU1.PhV" cdc="WYE">
+			<SDO name="phsA" type="TEMPLATEMET.METMMXU1.PPV.phsAB" />
+			<SDO name="phsB" type="TEMPLATEMET.METMMXU1.PPV.phsAB" />
+			<SDO name="phsC" type="TEMPLATEMET.METMMXU1.PPV.phsAB" />
+			<SDO name="res" type="TEMPLATEMET.METMMXU1.PPV.phsAB" />
+		</DOType>
+		<DOType id="TEMPLATEMET.METMMXU1.A" cdc="WYE">
+			<SDO name="phsA" type="TEMPLATEMET.METMMXU1.PPV.phsAB" />
+			<SDO name="phsB" type="TEMPLATEMET.METMMXU1.PPV.phsAB" />
+			<SDO name="phsC" type="TEMPLATEMET.METMMXU1.PPV.phsAB" />
+			<SDO name="neut" type="TEMPLATEMET.METMDST1.DmdA.phsA" />
+			<SDO name="res" type="TEMPLATEMET.METMMXU1.PPV.phsAB" />
+		</DOType>
+		<DOType id="TEMPLATEMET.METMSTA1.MaxA" cdc="WYE">
+			<SDO name="phsA" type="TEMPLATEMET.METMDST1.DmdA.phsA" />
+			<SDO name="phsB" type="TEMPLATEMET.METMDST1.DmdA.phsA" />
+			<SDO name="phsC" type="TEMPLATEMET.METMDST1.DmdA.phsA" />
+			<SDO name="neut" type="TEMPLATEMET.METMDST1.DmdA.phsA" />
+			<SDO name="res" type="TEMPLATEMET.METMDST1.DmdA.phsA" />
+			<DA name="dataNs" fc="EX" bType="VisString255" />
+		</DOType>
+		<DOType id="TEMPLATEMET.METMSTA1.MaxPhV" cdc="WYE">
+			<SDO name="phsA" type="TEMPLATEMET.METMDST1.DmdA.phsA" />
+			<SDO name="phsB" type="TEMPLATEMET.METMDST1.DmdA.phsA" />
+			<SDO name="phsC" type="TEMPLATEMET.METMDST1.DmdA.phsA" />
+			<DA name="dataNs" fc="EX" bType="VisString255" />
+		</DOType>
+		<DOType id="TEMPLATEMET.RMSMMXU2.A" cdc="WYE">
+			<SDO name="phsA" type="TEMPLATEMET.METMDST1.DmdA.phsA" />
+			<SDO name="phsB" type="TEMPLATEMET.METMDST1.DmdA.phsA" />
+			<SDO name="phsC" type="TEMPLATEMET.METMDST1.DmdA.phsA" />
+			<SDO name="neut" type="TEMPLATEMET.METMDST1.DmdA.phsA" />
+			<SDO name="res" type="TEMPLATEMET.METMDST1.DmdA.phsA" />
+		</DOType>
+		<DAType id="TEMPLATEANN.MVGGIO13.AnIn01.instMag">
+			<BDA name="f" bType="FLOAT32" />
+		</DAType>
+		<DAType id="TEMPLATECON.RBGGIO1.SPCSO01.Oper.origin">
+			<BDA name="orCat" bType="Enum" type="orCategory" />
+			<BDA name="orIdent" bType="Octet64" />
+		</DAType>
+		<DAType id="TEMPLATEANN.MVGGIO13.AnIn01.units">
+			<BDA name="SIUnit" bType="Enum" type="SIUnit" />
+			<BDA name="multiplier" bType="Enum" type="multiplier" />
+		</DAType>
+		<DAType id="TEMPLATEMET.METMDST1.DmdA.phsA.instCVal">
+			<BDA name="mag" bType="Struct" type="TEMPLATEANN.MVGGIO13.AnIn01.instMag" />
+		</DAType>
+		<DAType id="TEMPLATEMET.METMMXU1.PPV.phsAB.instCVal">
+			<BDA name="mag" bType="Struct" type="TEMPLATEANN.MVGGIO13.AnIn01.instMag" />
+			<BDA name="ang" bType="Struct" type="TEMPLATEANN.MVGGIO13.AnIn01.instMag" />
+		</DAType>
+		<DAType id="TEMPLATECON.RBGGIO1.SPCSO01.Oper">
+			<BDA name="ctlVal" bType="BOOLEAN" />
+			<BDA name="origin" bType="Struct" type="TEMPLATECON.RBGGIO1.SPCSO01.Oper.origin" />
+			<BDA name="ctlNum" bType="INT8U" />
+			<BDA name="T" bType="Timestamp" />
+			<BDA name="Test" bType="BOOLEAN" />
+			<BDA name="Check" bType="Check" />
+		</DAType>
+		<EnumType id="ctlModel">
+			<!--Source: IEC 61850-7-3:2003-->
+			<EnumVal ord="0">status-only</EnumVal>
+			<EnumVal ord="1">direct-with-normal-security</EnumVal>
+			<EnumVal ord="2">sbo-with-normal-security</EnumVal>
+			<EnumVal ord="3">direct-with-enhanced-security</EnumVal>
+			<EnumVal ord="4">sbo-with-enhanced-security</EnumVal>
+		</EnumType>
+		<EnumType id="orCategory">
+			<!--Source: IEC 61850-7-3:2003-->
+			<EnumVal ord="0">not-supported</EnumVal>
+			<EnumVal ord="1">bay-control</EnumVal>
+			<EnumVal ord="2">station-control</EnumVal>
+			<EnumVal ord="3">remote-control</EnumVal>
+			<EnumVal ord="4">automatic-bay</EnumVal>
+			<EnumVal ord="5">automatic-station</EnumVal>
+			<EnumVal ord="6">automatic-remote</EnumVal>
+			<EnumVal ord="7">maintenance</EnumVal>
+			<EnumVal ord="8">process</EnumVal>
+		</EnumType>
+		<EnumType id="multiplier">
+			<!--Source: IEC 61850-7-3:2003-->
+			<EnumVal ord="-24">y</EnumVal>
+			<EnumVal ord="-21">z</EnumVal>
+			<EnumVal ord="-18">a</EnumVal>
+			<EnumVal ord="-15">f</EnumVal>
+			<EnumVal ord="-12">p</EnumVal>
+			<EnumVal ord="-9">n</EnumVal>
+			<EnumVal ord="-6">µ</EnumVal>
+			<EnumVal ord="-3">m</EnumVal>
+			<EnumVal ord="-2">c</EnumVal>
+			<EnumVal ord="-1">d</EnumVal>
+			<EnumVal ord="0"></EnumVal>
+			<EnumVal ord="1">da</EnumVal>
+			<EnumVal ord="2">h</EnumVal>
+			<EnumVal ord="3">k</EnumVal>
+			<EnumVal ord="6">M</EnumVal>
+			<EnumVal ord="9">G</EnumVal>
+			<EnumVal ord="12">T</EnumVal>
+			<EnumVal ord="15">P</EnumVal>
+			<EnumVal ord="18">E</EnumVal>
+			<EnumVal ord="21">Z</EnumVal>
+			<EnumVal ord="24">Y</EnumVal>
+		</EnumType>
+		<EnumType id="SIUnit">
+			<!--Source: IEC 61850-7-3:2003-->
+			<EnumVal ord="1"></EnumVal>
+			<EnumVal ord="2">m</EnumVal>
+			<EnumVal ord="3">kg</EnumVal>
+			<EnumVal ord="4">s</EnumVal>
+			<EnumVal ord="5">A</EnumVal>
+			<EnumVal ord="6">K</EnumVal>
+			<EnumVal ord="7">mol</EnumVal>
+			<EnumVal ord="8">cd</EnumVal>
+			<EnumVal ord="9">deg</EnumVal>
+			<EnumVal ord="10">rad</EnumVal>
+			<EnumVal ord="11">sr</EnumVal>
+			<EnumVal ord="21">Gy</EnumVal>
+			<EnumVal ord="22">q</EnumVal>
+			<EnumVal ord="23">°C</EnumVal>
+			<EnumVal ord="24">Sv</EnumVal>
+			<EnumVal ord="25">F</EnumVal>
+			<EnumVal ord="26">C</EnumVal>
+			<EnumVal ord="27">S</EnumVal>
+			<EnumVal ord="28">H</EnumVal>
+			<EnumVal ord="29">V</EnumVal>
+			<EnumVal ord="30">ohm</EnumVal>
+			<EnumVal ord="31">J</EnumVal>
+			<EnumVal ord="32">N</EnumVal>
+			<EnumVal ord="33">Hz</EnumVal>
+			<EnumVal ord="34">lx</EnumVal>
+			<EnumVal ord="35">Lm</EnumVal>
+			<EnumVal ord="36">Wb</EnumVal>
+			<EnumVal ord="37">T</EnumVal>
+			<EnumVal ord="38">W</EnumVal>
+			<EnumVal ord="39">Pa</EnumVal>
+			<EnumVal ord="41">m²</EnumVal>
+			<EnumVal ord="42">m³</EnumVal>
+			<EnumVal ord="43">m/s</EnumVal>
+			<EnumVal ord="44">m/s²</EnumVal>
+			<EnumVal ord="45">m³/s</EnumVal>
+			<EnumVal ord="46">m/m³</EnumVal>
+			<EnumVal ord="47">M</EnumVal>
+			<EnumVal ord="48">kg/m³</EnumVal>
+			<EnumVal ord="49">m²/s</EnumVal>
+			<EnumVal ord="50">W/m K</EnumVal>
+			<EnumVal ord="51">J/K</EnumVal>
+			<EnumVal ord="52">ppm</EnumVal>
+			<EnumVal ord="53">1/s</EnumVal>
+			<EnumVal ord="54">rad/s</EnumVal>
+			<EnumVal ord="61">VA</EnumVal>
+			<EnumVal ord="62">Watts</EnumVal>
+			<EnumVal ord="63">VAr</EnumVal>
+			<EnumVal ord="64">phi</EnumVal>
+			<EnumVal ord="65">cos(phi)</EnumVal>
+			<EnumVal ord="66">Vs</EnumVal>
+			<EnumVal ord="67">V²</EnumVal>
+			<EnumVal ord="68">As</EnumVal>
+			<EnumVal ord="69">A²</EnumVal>
+			<EnumVal ord="70">A²t</EnumVal>
+			<EnumVal ord="71">VAh</EnumVal>
+			<EnumVal ord="72">Wh</EnumVal>
+			<EnumVal ord="73">VArh</EnumVal>
+			<EnumVal ord="74">V/Hz</EnumVal>
+		</EnumType>
+		<EnumType id="dir">
+			<!--Source: IEC 61850-7-3:2003-->
+			<EnumVal ord="0">unknown</EnumVal>
+			<EnumVal ord="1">forward</EnumVal>
+			<EnumVal ord="2">backward</EnumVal>
+			<EnumVal ord="3">both</EnumVal>
+		</EnumType>
+		<EnumType id="seqT">
+			<!--Source: IEC 61850-7-3:2003-->
+			<EnumVal ord="0">pos-neg-zero</EnumVal>
+			<EnumVal ord="1">dir-quad-zero</EnumVal>
+		</EnumType>
+		<EnumType id="Beh">
+			<!--Source: IEC 61850-7-4:2003-->
+			<EnumVal ord="1">on</EnumVal>
+			<EnumVal ord="2">blocked</EnumVal>
+			<EnumVal ord="3">test</EnumVal>
+			<EnumVal ord="4">test/blocked</EnumVal>
+			<EnumVal ord="5">off</EnumVal>
+		</EnumType>
+		<EnumType id="CBOpCap">
+			<!--Source: IEC 61850-7-4:2003-->
+			<EnumVal ord="1">None</EnumVal>
+			<EnumVal ord="2">Open</EnumVal>
+			<EnumVal ord="3">Close-Open</EnumVal>
+			<EnumVal ord="4">Open-Close-Open</EnumVal>
+			<EnumVal ord="5">Close-Open-Close-Open</EnumVal>
+		</EnumType>
+		<EnumType id="Health">
+			<!--Source: IEC 61850-7-4:2003-->
+			<EnumVal ord="1">Ok</EnumVal>
+			<EnumVal ord="2">Warning</EnumVal>
+			<EnumVal ord="3">Alarm</EnumVal>
+		</EnumType>
+		<EnumType id="Mod">
+			<!--Source: IEC 61850-7-4:2003-->
+			<EnumVal ord="1">on</EnumVal>
+			<EnumVal ord="2">blocked</EnumVal>
+			<EnumVal ord="3">test</EnumVal>
+			<EnumVal ord="4">test/blocked</EnumVal>
+			<EnumVal ord="5">off</EnumVal>
+		</EnumType>
+	</DataTypeTemplates>
+</SCL>

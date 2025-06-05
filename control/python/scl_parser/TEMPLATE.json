@@ -1,0 +1,477 @@
+{
+  "iedName": "TEMPLATE",
+  "localIP": "192.168.2.201",
+  "idDevice": 1,
+  "control": [
+    {
+      "object": "TEMPLATEANN/LLN0.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEANN/ALMGGIO10.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEANN/ETHGGIO11.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEANN/INGGIO1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEANN/INGGIO12.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEANN/LTGGIO5.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEANN/MISCGGIO8.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEANN/MOTGGIO7.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEANN/MVGGIO13.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEANN/OUTGGIO2.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEANN/RAGGIO15.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEANN/SCGGIO14.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEANN/SVGGIO3.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEANN/SVTGGIO4.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEANN/TLEDGGIO6.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEANN/VBGGIO9.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATECFG/LLN0.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATECON/LLN0.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATECON/RBGGIO1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATECON/RBGGIO1.SPCSO01",
+      "ctlModel": "direct-with-normal-security",
+      "enabled": true
+    },
+    {
+      "object": "TEMPLATECON/RBGGIO1.SPCSO02",
+      "ctlModel": "direct-with-normal-security",
+      "enabled": true
+    },
+    {
+      "object": "TEMPLATECON/RBGGIO1.SPCSO03",
+      "ctlModel": "direct-with-normal-security",
+      "enabled": true
+    },
+    {
+      "object": "TEMPLATECON/RBGGIO1.SPCSO04",
+      "ctlModel": "direct-with-normal-security",
+      "enabled": true
+    },
+    {
+      "object": "TEMPLATECON/RBGGIO1.SPCSO05",
+      "ctlModel": "direct-with-normal-security",
+      "enabled": true
+    },
+    {
+      "object": "TEMPLATECON/RBGGIO1.SPCSO06",
+      "ctlModel": "direct-with-normal-security",
+      "enabled": true
+    },
+    {
+      "object": "TEMPLATECON/RBGGIO1.SPCSO07",
+      "ctlModel": "direct-with-normal-security",
+      "enabled": true
+    },
+    {
+      "object": "TEMPLATECON/RBGGIO1.SPCSO08",
+      "ctlModel": "direct-with-normal-security",
+      "enabled": true
+    },
+    {
+      "object": "TEMPLATEMET/LLN0.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEMET/METMDST1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEMET/METMHAI1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEMET/METMMXU1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEMET/METMSQI1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEMET/METMSTA1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEMET/MOTORMMOT1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEMET/RMSMMXU2.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/LLN0.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/A49PTTR1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/A55POPF1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/ABSLOPMRI1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/BFR1RBRF1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/BK1XCBR1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/BK1XCBR1.Pos",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/BK1XCBR1.BlkOpn",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/BK1XCBR1.BlkCls",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/D1TPTOF1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/D2TPTOF2.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/G1TPIOC5.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/G1TPTOC4.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/G2TPIOC6.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/GAFPIOC11.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/JALRMPMSS1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/JTRIPPMSS2.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/LALRMPTUC1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/LJTRPMSS3.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/LOPPTUV3.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/LTRIPPTUC2.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/MCCSWI1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/MCCSWI1.Pos",
+      "ctlModel": "direct-with-normal-security",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/N1TPIOC7.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/N1TPTOC6.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/N2TPIOC8.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/NOSLOPMRI2.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/P1TPIOC1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/P1TPTOC3.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/P1TPTOV1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/P1TPTUV1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/P2TPIOC2.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/P2TPTOV2.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/P2TPTUV2.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/PAFPIOC10.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/PTCTPTTR7.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/PWR1PDOP1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/PWR1PDUP1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/PWR2PDOP1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/PWR2PDUP1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/Q1TPIOC9.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/Q1TPTOC5.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/R49PTTR4.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/RS59PTOV4.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/RSLOPMRI5.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/S49PTTR3.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/SPDSALPZSU1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/SPDSTRPZSU2.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/T47PTOV3.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/T49PTTR2.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/T55POPF2.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/TBSLOPMRI3.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/THRMLOPMRI4.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/TOL1PAFD1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/TRIPPTRC1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/UB46APTOC1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/UB46TPTOC2.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/UVRSLOPMRI5.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "TEMPLATEPRO/UVTRPTUV4.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    }
+  ]
+}

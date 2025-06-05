@@ -1,0 +1,362 @@
+{
+  "iedName": "BCUCPL",
+  "localIP": "172.28.80.1",
+  "idDevice": 1,
+  "control": [
+    {
+      "object": "BCUCPLCONTROL1/LLN0.Mod",
+      "ctlModel": "direct-with-enhanced-security",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL1/CILO1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL1/CILO2.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL1/CSWI1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL1/CSWI1.Pos",
+      "ctlModel": "sbo-with-enhanced-security",
+      "enabled": true
+    },
+    {
+      "object": "BCUCPLCONTROL1/CSWI2.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL1/CSWI2.Pos",
+      "ctlModel": "sbo-with-enhanced-security",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL1/CSWI3.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL1/CSWI3.Pos",
+      "ctlModel": "sbo-with-enhanced-security",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL1/CSWI9.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL1/CSWI9.Pos",
+      "ctlModel": "sbo-with-enhanced-security",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL1/GBAY1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL1/GBAY1.EnaSBMC",
+      "ctlModel": "direct-with-enhanced-security",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL1/GBAY1.Loc",
+      "ctlModel": "direct-with-enhanced-security",
+      "enabled": true
+    },
+    {
+      "object": "BCUCPLCONTROL1/GGIO1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL1/GGIO1.SPCSO1",
+      "ctlModel": "direct-with-normal-security",
+      "enabled": true
+    },
+    {
+      "object": "BCUCPLCONTROL1/GGIO1.SPCSO2",
+      "ctlModel": "direct-with-enhanced-security",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL1/GGIO10.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL1/GGIO3.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL1/GGIO4.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL1/GGIO5.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL1/GGIO7.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL1/GGIO8.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL1/GGIO9.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL1/GGSS1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL1/GGSS1.LocSubst",
+      "ctlModel": "direct-with-enhanced-security",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL1/RSYN1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL1/RSYN1.Ena",
+      "ctlModel": "direct-with-enhanced-security",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL1/RSYN1.EnaSec",
+      "ctlModel": "direct-with-enhanced-security",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL1/XSWI1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL1/XSWI1.BlkCls",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL1/XSWI1.BlkOpn",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL2/LLN0.Mod",
+      "ctlModel": "direct-with-enhanced-security",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL2/CILO3.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL2/GAPC11.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL2/GAPC12.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL2/GAPC13.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL2/GAPC14.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL2/GAPC15.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL2/GAPC16.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL2/GAPC4.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL2/GAPC5.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL2/GGIO2.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL2/GGIO3.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL2/GGIO4.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL2/GGSS1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL2/GGSS1.LocSubst",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL2/RSYN1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL2/RSYN1.SGEna1",
+      "ctlModel": "direct-with-normal-security",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL2/XCBR1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL2/XSWI1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL2/XSWI1.BlkCls",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL2/XSWI1.BlkOpn",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL2/XSWI2.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL2/XSWI2.BlkCls",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL2/XSWI2.BlkOpn",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL3/LLN0.Mod",
+      "ctlModel": "direct-with-enhanced-security",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL3/GAPC1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL3/GAPC2.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL3/XCBR1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL3/XCBR1.BlkCls",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL3/XCBR1.BlkOpn",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLCONTROL3/XCBR1.Pos",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLLD0/LLN0.Mod",
+      "ctlModel": "direct-with-enhanced-security",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLLD0/LDBI1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLLD0/LDBI1.ODDBSw",
+      "ctlModel": "direct-with-normal-security",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLMEASUREMENT1/LLN0.Mod",
+      "ctlModel": "direct-with-enhanced-security",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLMEASUREMENT1/GGIO1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLMEASUREMENT1/rmsMMXU1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLSYSTEM/LLN0.Mod",
+      "ctlModel": "direct-with-enhanced-security",
+      "enabled": false
+    },
+    {
+      "object": "BCUCPLSYSTEM/C26xLDIA1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    }
+  ]
+}

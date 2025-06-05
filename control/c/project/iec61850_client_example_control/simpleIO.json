@@ -1,0 +1,61 @@
+{
+  "iedName": "simpleIO",
+  "localIP": "0.0.0.0",
+  "control": [
+    {
+      "object": "simpleIOGenericIO/LLN0.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "simpleIOGenericIO/GGIO1.Mod",
+      "ctlModel": "status-only",
+      "enabled": false
+    },
+    {
+      "object": "simpleIOGenericIO/GGIO1.SPCSO1",
+      "ctlModel": "direct-with-normal-security",
+      "enabled": false
+    },
+    {
+      "object": "simpleIOGenericIO/GGIO1.SPCSO2",
+      "ctlModel": "sbo-with-normal-security",
+      "enabled": false
+    },
+    {
+      "object": "simpleIOGenericIO/GGIO1.SPCSO3",
+      "ctlModel": "direct-with-enhanced-security",
+      "enabled": false
+    },
+    {
+      "object": "simpleIOGenericIO/GGIO1.SPCSO4",
+      "ctlModel": "sbo-with-enhanced-security",
+      "enabled": false
+    },
+    {
+      "object": "simpleIOGenericIO/GGIO1.SPCSO5",
+      "ctlModel": "direct-with-normal-security",
+      "enabled": false
+    },
+    {
+      "object": "simpleIOGenericIO/GGIO1.SPCSO6",
+      "ctlModel": "sbo-with-normal-security",
+      "enabled": false
+    },
+    {
+      "object": "simpleIOGenericIO/GGIO1.SPCSO7",
+      "ctlModel": "direct-with-enhanced-security",
+      "enabled": false
+    },
+    {
+      "object": "simpleIOGenericIO/GGIO1.SPCSO8",
+      "ctlModel": "sbo-with-enhanced-security",
+      "enabled": false
+    },
+    {
+      "object": "simpleIOGenericIO/GGIO1.SPCSO9",
+      "ctlModel": "direct-with-enhanced-security",
+      "enabled": false
+    }
+  ]
+}

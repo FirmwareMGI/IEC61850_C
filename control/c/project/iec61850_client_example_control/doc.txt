@@ -1,0 +1,45 @@
+Request:
+  topic->DMS/../{id}/control/request
+  payload-> {
+            "object": "BCUCPLCONTROL1.GBAY1.Loc",
+            "valueNow": true,
+            "lastValue": false,
+            "typeData": "boolean",
+            "ctlCommand": "sbo",
+            "interlocking": false,
+            "synchrocheck": false,
+            "testmode": false,
+            "timestamp": 1
+          }
+
+Response:
+  topic->DMS/.../{id}/control/response
+
+  jika success
+  payload-> {
+            "valueNow": "true",
+            "lastValue": "none",
+            "status": "success",
+            "object": "simpleIOGenericIO/GGIO1.SPCSO1",
+            "ctlCommand": "direct",
+            "iecErrorString": "none",
+            "errorString": "none",
+            "timestamp": "2025-06-05 10:24:33"
+          }
+
+  jika failed
+  payload-> {
+            "valueNow": "true",
+            "lastValue": "false",
+            "status": "error",
+            "object": "simpleIOGenericIO/GGIO1.SPCSO21",
+            "ctlCommand": "sbo",
+            "iecErrorString": "none",
+            "errorString": "item not found in device",
+            "timestamp": "2025-06-05 10:27:47"
+          }
+
+
+item: BCUCPLCONTROL1/CSWI1.Pos - sbo
+      BCUCPLCONTROL1/GGIO1.SPCSO1 - direct
+      BCUCPLCONTROL1/GBAY1.Loc - direct
